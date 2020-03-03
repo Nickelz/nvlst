@@ -26,13 +26,12 @@
 							width="20px"><span>Cart</span></a></li>
 				<li><a href="#"><img src="./public/images/icons8-wish_list.svg" alt="My books"
 							width="20px"><span>Lists</span></a></li>
-				<li><a href="#"><img src="./public/images/icons8-purchase_order.svg" alt="My reviews"
-							width="20px"><span>Orders</span></a>
 				</li>
 			</ul>
 
 			<center>
 				<a href="#">Sign Up / Login</a>
+				<span>Hello moh</span>
 			</center>
 		</div>
 	</div>
