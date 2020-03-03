@@ -1,3 +1,13 @@
-body {
+:root {
 	background-color: #161618;
+	font-family: Poppins;
+	color: white;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	margin: 0;
 }
