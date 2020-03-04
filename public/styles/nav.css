@@ -12,7 +12,7 @@
 	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
 	width: 65%;
-	max-width: 250px;
+	max-width: 230px;
 
 	padding: 0;
 	margin: 0 auto;
@@ -22,7 +22,7 @@
 	margin: 10% 15%;
 	width: 35%;
 	max-width: 100px;
-	min-width: 70px;
+	min-width: 50px;
 }
 
 .sideNav ul {
@@ -65,7 +65,7 @@
 
 
 .sideNav ul li:hover {
-	background: #1F2023;
+	background: var(--panel-bg-color);
 	box-shadow: inset 0px -5px 30px rgba(16, 16, 16, 0.3), inset 0px 5px 30px rgba(0, 0, 0, 0.3);
 	border-color: var(--gold-color);
 }
@@ -86,4 +86,31 @@
 	width: 70%;
 	height: 2rem;
 	margin: 0 auto 1.5rem auto;
+}
+
+@media screen and (max-width: 880px) {
+	.sideNav ul li span {
+		display: none;
+	}
+
+	.sideNav ul li {
+		display: flex;
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+	}
+
+	.sideNav .logo {
+		display: block;
+		margin: 15px auto 20px auto;
+	}
+
+	#signUpLoginButton::before {
+		content: "Login";
+		font-size: 12px;
+	}
+
+	#signUpLoginButton > span{
+		display: none;
+	}
 }
