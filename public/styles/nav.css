@@ -34,8 +34,10 @@
 .sideNav ul li span {
 	color: #787C87;
 	font-weight: 600;
-	font-size: 75%;
+	font-size: 80%;
 	text-transform: uppercase;
+
+	margin-left: 0.75rem;
 }
 
 .sideNav ul li {
@@ -45,6 +47,11 @@
 	padding-left: 2.5rem;
 	border: 1.5px solid transparent;
 	border-style: solid none solid none;
+}
+
+.sideNav ul li a {
+	display: flex;
+	align-items: center;
 }
 
 .sideNav ul li:first-child {
