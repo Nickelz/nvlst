@@ -5,34 +5,44 @@
 }
 
 .sideNav {
-	background: #1F2023;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	background: var(--panel-bg-color);
 	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
 	width: 65%;
+	max-width: 250px;
+
+	padding: 0;
 	margin: 0 auto;
 }
 
 .sideNav .logo {
 	margin: 10% 15%;
+	width: 35%;
+	max-width: 100px;
+	min-width: 70px;
 }
 
 .sideNav ul {
 	list-style: none;
+	width: 100%;
 	padding: 0;
 }
 
 .sideNav ul li span {
 	color: #787C87;
 	font-weight: 600;
-	font-size: 14px;
+	font-size: 75%;
 	text-transform: uppercase;
 }
 
 .sideNav ul li {
-	margin-top: 15px;
-	padding-left: 15%;
-	padding-top: 2%;
-	padding-bottom: 2%;
+	display: flex;
+	align-items: center;
+	height: 2.5rem;
+	padding-left: 2.5rem;
 	border: 1.5px solid transparent;
 	border-style: solid none solid none;
 }
@@ -47,24 +57,26 @@
 }
 
 
-.sideNav center a {
-	color: black;
-	font-weight: bolder;
-	text-transform: uppercase;
-	text-align: center;
-	background: #F5D8B9;
-	border-radius: 41px;
-	display: block;
-	width: 150px;
-	height: 32px;
-}
-
 .sideNav ul li:hover {
 	background: #1F2023;
 	box-shadow: inset 0px -5px 30px rgba(16, 16, 16, 0.3), inset 0px 5px 30px rgba(0, 0, 0, 0.3);
-	border-color: #F5D8B9;
+	border-color: var(--gold-color);
 }
 
-.sideNav ul li a img, .sideNav ul li a span {
-	vertical-align: middle;
+#signUpLoginButton {
+	display: flex;
+
+	background-color: var(--gold-color);
+	border-radius: 5vw;
+
+	color: black;
+	text-transform: uppercase;
+	font-size: 0.85em;
+	font-weight: 610;
+	justify-content: center;
+	align-items: center;
+
+	width: 70%;
+	height: 2rem;
+	margin: 0 auto 1.5rem auto;
 }

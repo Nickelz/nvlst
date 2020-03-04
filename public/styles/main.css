@@ -1,7 +1,17 @@
 :root {
-	background-color: #161618;
+	font-size: 16px;
 	font-family: Poppins;
 	color: white;
+
+	--bg-color: #161618;
+	--panel-bg-color: #1F2023;
+	--gold-color: #F5D8B9;
+}
+
+body {
+	background-color: var(--bg-color);
+	margin: 0;
+	padding: 0;
 }
 
 a {
