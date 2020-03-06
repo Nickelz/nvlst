@@ -6,6 +6,7 @@
 
 .sideNav {
 	display: flex;
+	position: relative;
 	flex-direction: column;
 	align-items: flex-start;
 	background: var(--panel-bg-color);
@@ -15,7 +16,8 @@
 	max-width: 230px;
 
 	padding: 0;
-	margin: 0 auto;
+	margin-left: auto;
+	left: -50px;
 }
 
 .sideNav .logo {
@@ -89,6 +91,10 @@
 }
 
 @media screen and (max-width: 880px) {
+	.sideNav {
+		position: unset;
+	}
+
 	.sideNav ul li span {
 		display: none;
 	}
