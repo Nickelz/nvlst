@@ -1,0 +1,76 @@
+.container {
+	grid-template-columns: 0.1fr 0.65fr 0.20fr;
+	gap: 30px;
+}
+
+.myCart, .checkout {
+	background: var(--panel-bg-color);
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	width: 100%;
+}
+
+h1 {
+	margin: 20px 30px;
+	font-size: 1.5em;
+	font-weight: 600;
+}
+
+.myCart h1 {
+	margin-bottom: 0;
+}
+
+.myCart span {
+	font-size: 0.85em;
+	margin: 20px 30px;
+	color: var(--secondary-text-color);
+}
+
+.books {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 2rem;
+}
+
+#book {
+	background-color: var(--panel-bg-secondary-color);
+	border-radius: 1rem;
+	margin: 1rem;
+	margin-top: 3rem;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 10rem;
+
+	height: 15rem;
+}
+
+#book img {
+	width: 75%;
+}
+
+#book > *:last-child {
+	margin-bottom: 0.5rem;
+}
+
+#bookTitle {
+	color: var(--off-white-color);
+	font-weight: bold;
+}
+
+#bookAuthor {
+	color: var(--secondary-text-color);
+	font-size: 0.85em;
+	font-style: italic;
+}
+
+#bookPrice {
+	margin-top: 0.5rem;
+	font-size: 1.1em;
+	font-weight: 600;
+}

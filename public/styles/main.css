@@ -5,7 +5,10 @@
 
 	--bg-color: #161618;
 	--panel-bg-color: #1F2023;
+	--panel-bg-secondary-color: #161618;
 	--gold-color: #F5D8B9;
+	--off-white-color: #C9C9C9;
+	--secondary-text-color: #656874;
 }
 
 body {
@@ -20,4 +23,11 @@ a {
 
 ul {
 	margin: 0;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 0.75fr 1fr;
+	margin: 1%;
+	justify-content: center;
 }
