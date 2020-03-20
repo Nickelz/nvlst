@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<?php include('./templates/header.php'); ?>
+	
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="./public/styles/nav.css">
+</head>
+
+<style>
+
+body
+{
+background: #161618;
+}
+
+
+ul
+{
+	list-style: none;
+	line-height:180%;
+	position: relative;
+	top: 16px;
+	right: 23px;
+	font-size: 14px;
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif;
+
+}
+
+h4
+{
+	position: relative;
+	left: 22px;
+
+	top: 7px;
+	
+	line-height: 3px;
+	font-weight: bold;
+	font-size: 18px;
+	font-family: 'Poppins', sans-serif;
+}
+
+
+input
+{
+	text-align: center;
+}
+
+
+
+.language-container
+{
+	display: grid;
+
+position: absolute;
+width: 200px;
+height: 260px;
+left: 312px;
+top: 72px;
+
+background: #1F2023;
+box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+color: white;
+
+}
+
+.gnre-container>h4
+{
+	position: relative;
+	left: 22px;
+
+	top: 20px;
+	line-height: 30px;
+
+
+}
+
+.gnre-container>ul
+{
+	
+	position: relative;
+	top: 100px;
+	line-height:180%;
+
+}
+
+.gnre-container
+{
+	display: grid;
+	position: relative;
+	left: 501px;
+	margin-left: 13px;
+	top: 64px;
+
+	height: 330px;
+	width: 185px;
+	background:#1F2023; ;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	color: white;
+	font-size: 14px;
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif;
+}
+
+.issn-container
+{
+	display: grid;
+	
+	padding: 5px 6px;
+	position: absolute;
+	width: 174px;
+	height: 100px;
+	left: 707px;
+	top: 192px;
+	margin-left: 10px;
+
+	background: #1F2023;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+
+.text-issn
+{
+	position: relative;
+	left: 20px;
+	top: 0px;
+	width: 134px;
+	height: 30px;
+
+	background: #161618;
+	border: 1.5px solid #000000;
+	box-sizing: border-box;
+	border-radius: 4px;
+	color: white;
+
+}
+
+.issn-container>h4
+{
+	position: relative;
+	right: 50px;
+		color: white;
+
+		
+
+}
+
+
+::placeholder
+{
+	color: #787C87;
+	text-align: center;
+
+}
+
+.isbn-container
+{
+	display: grid;
+	
+	padding: 5px 5px;
+	position: absolute;
+	width: 174px;
+	height: 100px;
+	left: 707px;
+	top: 72px;
+	margin-left: 10px;
+	background: #1F2023;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+.text-isbn
+{
+	position: relative;
+	left: 20px;
+	top: 0px;
+	width: 134px;
+	height: 30px;
+	background: #161618;
+	border: 1.5px solid #000000;
+	box-sizing: border-box;
+	border-radius: 4px;
+	color: white;
+
+}
+
+.isbn-container>h4
+{
+	position: relative;
+	right: 50px;
+	top: 7px;
+		color: white;
+}
+
+.publication-date
+{
+	display: grid;
+	
+	padding: 5px 5px;	
+	padding-right: 77px;	
+
+	position: absolute;
+	width: 174px;
+	height: 100px;
+	left: 900px;
+	top: 72px;
+	margin-left: 10px;
+	background: #1F2023;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+.publication-date>h4
+{
+	position: relative;
+	right: 50px;
+	top: 3px;
+		color: white;
+}
+
+.date-year
+{
+	position: relative;
+	left: 20px;
+	top: 0px;
+	width: 99px;
+	height: 30px;
+	background: #161618;
+	border: 1.5px solid #000000;
+	box-sizing: border-box;
+	border-radius: 4px;
+	color: white;
+}
+
+.date-month
+{	
+	position: relative;
+	left: 20px;
+	margin-right: 8px;
+	top: 0px;
+	width: 99px;
+	height: 30px;
+	background: #161618;
+	border: 1.5px solid #000000;
+	box-sizing: border-box;
+	border-radius: 4px;
+	color: white;
+}
+
+.publication-date>form
+{
+	display: flex;
+	flex-direction: row;
+}
+
+.trans-type
+{
+	display: grid;
+
+position: absolute;
+width: 200px;
+height: 260px;
+left: 1170px;
+top: 72px;
+margin-left: 6px;
+
+background: #1F2023;
+box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+color: white;
+
+}
+
+
+</style>
+
+<body>
+	<!--<div class="container">
+
+		<div class="sideNav">
+			<img src="./public/images/Logo.svg" alt="Logo" class="logo">
+
+			<ul>
+				<li><a href="#"><img id="list-icon" src="./public/images/icons8-search.svg" alt="Search" width="20px">&nbsp;<span>Search</span></a></li>
+				<li><a href="#"><img id="list-icon" src="./public/images/icons8-books.svg" alt="My books" width="20px">&nbsp;<span>My Books</span></a></li>
+				<li><a href="#"><img id="list-icon" src="./public/images/icons8-survey.svg" alt="My reviews" width="20px">&nbsp;<span>My Reviews</span></a>
+				</li>
+			</ul>
+
+			<ul>
+				<li><a href="#"><img id="list-icon" src="./public/images/icons8-shopping_cart_with_money.svg" alt="Search" width="20px">&nbsp;<span>Cart</span></a></li>
+				<li><a href="#"><img id="list-icon" src="./public/images/icons8-wish_list.svg" alt="My books" width="20px">&nbsp;<span>Lists</span></a></li>
+				<li><a href="#"><img id="list-icon" src="./public/images/icons8-purchase_order.svg" alt="My reviews" width="20px">&nbsp;<span>Orders</span></a>
+				</li>
+			</ul>
+		</div>
+	-->
+		<div class="mainContent">
+			
+			
+				<div class="language-container">
+
+
+					<form action="#" method="GET" >
+
+						<h4>Language</h4>
+
+						<ul>
+
+						<li><input class="cbx" type="checkbox"  name="language" id="arabic">
+						 <label for="arabic" class="check">Arabic</label></li>
+
+						<li><input type="checkbox" id="english"  name="language" value="english">
+						<label for="english" class="check">English</label></li>
+
+						<li><input type="checkbox" id="german" name="language" value="german">
+						<label for="german" class="check">German</label></li>
+
+						<li><input type="checkbox" id="french" name="language" value="french">
+						<label for="french" class="check">French</label></li>
+
+						<li><input type="checkbox" id="spanish" name="language" value="spanish">
+						<label for="spanish" class="check">Spanish</label></li>
+
+						<li><input type="checkbox" id="chines" name="language" value="chines">
+						<label for="chines" class="check">Chines (triditional)</label></li>
+
+						<li><input type="checkbox" id="other" name="language" value="other">
+						<label for="other" class="check">Other</label></li>
+
+					</ul>
+					</form>
+				</div>
+
+				<div class="gnre-container">
+
+					<form action="#" method="GET">
+
+					<h4>Genre</h4>
+
+					<ul>
+
+					<li><input type="checkbox"  name="language" id="art">
+						<label for="art" class="check">Art</label></li>
+
+					   <li><input type="checkbox" id="business"  name="language" value="business">
+					   <label for="business" class="check">Bussiness</label></li>
+
+					   <li><input type="checkbox" id="children" children="language" value="children">
+					   <label for="children" class="check">Children</label></li>
+
+					   <li><input type="checkbox" id="education" name="language" value="education">
+					   <label for="education" class="check">Education</label></li>
+
+					   <li><input type="checkbox" id="law" name="language" value="law">
+					   <label for="law" class="check">Law</label></li>
+
+					   <li><input type="checkbox" id="politics" name="language" value="politics">
+					   <label for="politics" class="check">Politics</label></li>
+
+					   <li><input type="checkbox" id="romance" name="language" value="romance">
+					   <label for="romance" class="check">Romance</label></li>
+
+					   <li><input type="checkbox" id="medical" name="language" value="medical">
+						<label for="medical" class="check">Medical</label></li>
+ 
+						<li><input type="checkbox" id="mystery" name="language" value="mystery">
+						<label for="mystery" class="check">Mystery</label></li>
+ 
+						<li><input type="checkbox" id="si-math" name="language" value="si-math">
+						<label for="si-math" class="check">Siance & math</label></li>
+					</ul>
+					
+				</div>
+				</form>
+
+				<div class="issn-container">
+
+					<h4>ISSN</h4>
+					<form action="#">
+
+						<input class="text-issn" type="text" name="issn" id="issn" placeholder="xxxxxxxxxx" required>
+
+
+					</form>
+				</div>
+		
+
+				<div class="isbn-container">
+
+					<h4>ISBN</h4>
+					<form action="#">
+
+						<input class="text-isbn" type="text" name="isbn" id="isbn" placeholder="xxxx-xxxx" required>
+
+
+					</form>
+				</div>
+
+				<div class="publication-date">
+
+					<h4>Publication Date</h4>
+					<form action="#">
+
+						<input class="date-month" type="text" name="year" id="month" placeholder="MM" required>
+						<input class="date-year" type="text" name="year" id="year" placeholder="YYYY" required>
+
+
+					</form>
+				</div>
+
+				<div class="trans-type">
+
+					<form action="#" method="GET">
+
+					<h4>Transaction Type</h4>
+
+					<ul id="tt">
+
+					<li><input type="checkbox"  name="rent" id="rent">
+						<label for="rent">Rent</label></li>
+
+					   <li><input type="checkbox" id="purchase"  name="purchase" value="purchase">
+					   <label for="purchase" class="check">Purchase</label></li>
+
+					   <li><input type="checkbox" id="sample" children="sample" value="sample">
+					   <label for="sample" class="check">Sample</label></li>
+
+					</ul>
+					
+				</div>
+				</form>
+				
+	</div>
+</body>
+
+</html>
