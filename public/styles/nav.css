@@ -80,6 +80,10 @@
 
 @media screen and (max-width: 1600px) {
 
+	.sideNav {
+		min-width: 70px;
+	}
+
 	.sideNav ul li span {
 		display: none;
 	}

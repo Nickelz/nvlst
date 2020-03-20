@@ -1,0 +1,266 @@
+body
+{
+background: #161618;
+}
+
+
+ul
+{
+	list-style: none;
+	line-height:180%;
+	position: relative;
+	top: 16px;
+	right: 23px;
+	font-size: 14px;
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif;
+
+}
+
+h4
+{
+	position: relative;
+	left: 22px;
+
+	top: 7px;
+	
+	line-height: 3px;
+	font-weight: bold;
+	font-size: 18px;
+	font-family: 'Poppins', sans-serif;
+}
+
+
+input
+{
+	text-align: center;
+}
+
+
+
+.language-container
+{
+	display: grid;
+
+position: absolute;
+width: 200px;
+height: 260px;
+left: 312px;
+top: 72px;
+
+background: #1F2023;
+box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+color: white;
+
+}
+
+.gnre-container>h4
+{
+	position: relative;
+	left: 22px;
+
+	top: 20px;
+	line-height: 30px;
+
+
+}
+
+.gnre-container>ul
+{
+	
+	position: relative;
+	top: 100px;
+	line-height:180%;
+
+}
+
+.gnre-container
+{
+	display: grid;
+	position: relative;
+	left: 501px;
+	margin-left: 13px;
+	top: 64px;
+
+	height: 330px;
+	width: 185px;
+	background:#1F2023; ;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	color: white;
+	font-size: 14px;
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif;
+}
+
+.issn-container
+{
+	display: grid;
+	
+	padding: 5px 6px;
+	position: absolute;
+	width: 174px;
+	height: 100px;
+	left: 707px;
+	top: 192px;
+	margin-left: 10px;
+
+	background: #1F2023;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+
+.text-issn
+{
+	position: relative;
+	left: 20px;
+	top: 0px;
+	width: 134px;
+	height: 30px;
+
+	background: #161618;
+	border: 1.5px solid #000000;
+	box-sizing: border-box;
+	border-radius: 4px;
+	color: white;
+
+}
+
+.issn-container>h4
+{
+	position: relative;
+	right: 50px;
+		color: white;
+
+		
+
+}
+
+
+::placeholder
+{
+	color: #787C87;
+	text-align: center;
+
+}
+
+.isbn-container
+{
+	display: grid;
+	
+	padding: 5px 5px;
+	position: absolute;
+	width: 174px;
+	height: 100px;
+	left: 707px;
+	top: 72px;
+	margin-left: 10px;
+	background: #1F2023;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+.text-isbn
+{
+	position: relative;
+	left: 20px;
+	top: 0px;
+	width: 134px;
+	height: 30px;
+	background: #161618;
+	border: 1.5px solid #000000;
+	box-sizing: border-box;
+	border-radius: 4px;
+	color: white;
+
+}
+
+.isbn-container>h4
+{
+	position: relative;
+	right: 50px;
+	top: 7px;
+		color: white;
+}
+
+.publication-date
+{
+	display: grid;
+	
+	padding: 5px 5px;	
+	padding-right: 77px;	
+
+	position: absolute;
+	width: 174px;
+	height: 100px;
+	left: 900px;
+	top: 72px;
+	margin-left: 10px;
+	background: #1F2023;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+.publication-date>h4
+{
+	position: relative;
+	right: 50px;
+	top: 3px;
+		color: white;
+}
+
+.date-year
+{
+	position: relative;
+	left: 20px;
+	top: 0px;
+	width: 99px;
+	height: 30px;
+	background: #161618;
+	border: 1.5px solid #000000;
+	box-sizing: border-box;
+	border-radius: 4px;
+	color: white;
+}
+
+.date-month
+{	
+	position: relative;
+	left: 20px;
+	margin-right: 8px;
+	top: 0px;
+	width: 99px;
+	height: 30px;
+	background: #161618;
+	border: 1.5px solid #000000;
+	box-sizing: border-box;
+	border-radius: 4px;
+	color: white;
+}
+
+.publication-date>form
+{
+	display: flex;
+	flex-direction: row;
+}
+
+.trans-type
+{
+	display: grid;
+
+position: absolute;
+width: 200px;
+height: 260px;
+left: 1170px;
+top: 72px;
+margin-left: 6px;
+
+background: #1F2023;
+box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+color: white;
+
+}
+
