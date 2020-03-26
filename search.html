@@ -5,7 +5,7 @@
 	<?php include('./templates/header.php'); ?>
 	
 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-
+<title>Search</title>
 
     <link rel="stylesheet" href="./public/styles/nav.css">
     <link rel="stylesheet" type="text/css" href="./public/styles/search.css">
@@ -14,29 +14,8 @@
 
 
 <body>
-	<!--<div class="container">
-
-		<div class="sideNav">
-			<img src="./public/images/Logo.svg" alt="Logo" class="logo">
-
-			<ul>
-				<li><a href="#"><img id="list-icon" src="./public/images/icons8-search.svg" alt="Search" width="20px">&nbsp;<span>Search</span></a></li>
-				<li><a href="#"><img id="list-icon" src="./public/images/icons8-books.svg" alt="My books" width="20px">&nbsp;<span>My Books</span></a></li>
-				<li><a href="#"><img id="list-icon" src="./public/images/icons8-survey.svg" alt="My reviews" width="20px">&nbsp;<span>My Reviews</span></a>
-				</li>
-			</ul>
-
-			<ul>
-				<li><a href="#"><img id="list-icon" src="./public/images/icons8-shopping_cart_with_money.svg" alt="Search" width="20px">&nbsp;<span>Cart</span></a></li>
-				<li><a href="#"><img id="list-icon" src="./public/images/icons8-wish_list.svg" alt="My books" width="20px">&nbsp;<span>Lists</span></a></li>
-				<li><a href="#"><img id="list-icon" src="./public/images/icons8-purchase_order.svg" alt="My reviews" width="20px">&nbsp;<span>Orders</span></a>
-				</li>
-			</ul>
-		</div>
-	-->
+    
 		<div class="mainContent">
-			
-			
 				<div class="language-container">
 
 
@@ -147,6 +126,7 @@
 
 					</form>
 				</div>
+				
 
 				<div class="trans-type">
 
@@ -168,7 +148,22 @@
 					</ul>
 					
 				</div>
-				</form>
+                </form>
+                
+                <div class="search-container">
+                    <form>
+                    <img id="search-icon" src="./public/images/icons8-search.svg" alt="Search" width="20px"><span></span></a>
+
+                    <input class="search-bar" type="search"placeholder="Search for book,auther,provider">
+                    
+                    <input class="reset-button" type="reset" id=reset value="RESET">
+
+                    <input class="search-button" type="submit" id=search value="Search">
+
+
+                </form>
+
+                </div>
 				
 	</div>
 </body>
