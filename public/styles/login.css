@@ -1,0 +1,122 @@
+.mainContainer {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.mainContainer #logo {
+	width: 5%;
+	margin-top: 5%;
+	margin-bottom: 0;
+	align-self: center;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--panel-bg-color);
+	width: 19%;
+	border-radius: 10px;
+	margin: 1.5rem auto;
+}
+
+.container hr {
+	width: 100%;
+	margin: 0;
+	border: 1px solid var(--panel-bg-secondary-color);
+}
+
+.container h1 {
+	width: 85%;
+	margin: 0.85rem auto;
+}
+
+.container form {
+	display: flex;
+	flex-direction: column;
+	margin-top: 1.5rem;
+}
+
+.container form span {
+	width: 85%;
+	margin: 0 auto 0.35rem auto;
+	font-size: 0.85em;
+	font-weight: 500;
+	color: var(--secondary-text-color);
+	text-transform: uppercase;
+}
+
+.container form input {
+	color: white;
+	background-color: var(--panel-bg-secondary-color);
+	border-radius: 0.25rem;
+	height: 1.5rem;
+	border: 0.11rem solid transparent;
+	margin: 0 1.5rem 0 1.5rem;
+	font-size: 0.85em;
+	font-weight: 400;
+	padding-left: 1rem;
+}
+
+.container form span:nth-child(3) {
+	margin-top: 1.25rem;
+}
+
+.container form input[type="submit"] {
+	margin: unset;
+	margin-top: 1.75rem;
+	margin-right: 1.5rem;
+	margin-left: auto;
+	width: 40%;
+	height: 1.8rem;
+
+	font-size: 0.85em;
+	font-weight: bold;
+
+	text-transform: uppercase;
+
+	color: var(--bg-color);
+	background-color: var(--gold-color);
+
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.container form input[type="submit"]:hover {
+	background-color: var(--panel-bg-secondary-color);
+	border: 1px solid var(--gold-color);
+	color: var(--gold-color);
+}
+
+.container form input:focus {
+	border-color: var(--gold-color);
+}
+
+.container .signUp {
+	font-weight: 550;
+	font-size: 0.9em;
+	text-transform: uppercase;
+
+	color: var(--secondary-text-color);
+	margin-left: auto;
+	margin-top: 1.25rem;
+	margin-right: 1.5rem;
+}
+
+.backToBrowsing {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	margin-left: 1.5rem;
+}
+
+.backToBrowsing a {
+	font-size: 0.75em;
+	text-transform: uppercase;
+	font-weight: 550;
+	margin-left: 0.5rem;
+	color: var(--secondary-text-color);
+}
