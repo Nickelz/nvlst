@@ -1,0 +1,73 @@
+.container {
+	grid-template-columns: 0.15fr 0.85fr;
+	gap: 1rem;
+}
+
+.myBooks {
+	width: 75%;
+	background: var(--panel-bg-color);
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	width: 100%;
+}
+
+.myBooks .segmentedControl {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 0.25rem;
+	height: 7.5%;
+	width: 22%;
+
+	font-size: 0.75vw;
+	font-weight: 400;
+	text-transform: uppercase;
+	margin: 1.25% auto;
+	background-color: var(--panel-bg-secondary-color);
+	color: var(--unselected-text-color)
+}
+
+.myBooks .segmentedControl input[type="radio"] {
+	display: none;
+}
+
+.myBooks .segmentedControl label {
+	padding: 1% 5%;
+}
+
+.myBooks .segmentedControl input[type="radio"]:checked + label {
+	color: white;
+	background-color: var(--unselected-text-color);
+	border-radius: 0.18rem;
+	font-weight: 500;
+}
+
+.myBooks .books {
+	display: flex;
+	flex-wrap: wrap;
+	flex-flow: row wrap;
+	margin: 2%;
+	justify-content: center;
+}
+
+.myBooks .books ul {
+	flex: 0 0 8%;
+	list-style: none;
+	width: 100%;
+	padding: 0.35%;
+	padding-bottom: 0;
+	font-size: 0.7vw;
+	text-align: center;
+	color: var(--off-white-color);
+}
+
+.myBooks .books ul li img {
+	width: 100%;
+}
+
+.myBooks .books #shelf {
+	width: 100%;
+	margin: 0;
+	margin-bottom: 1.5%;
+	flex: 100%;
+}
