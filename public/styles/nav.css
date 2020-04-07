@@ -33,7 +33,7 @@
 .sideNav ul li {
 	display: flex;
 	align-items: center;
-	height: 5vh;
+	height: 3.5vh;
 	padding-left: 2.5rem;
 	border: 1.5px solid transparent;
 	border-style: solid none solid none;

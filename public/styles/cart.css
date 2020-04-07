@@ -1,5 +1,5 @@
-.flex {
-	grid-template-columns: 0.1fr 0.65fr 0.20fr;
+.container {
+	grid-template-columns: 0.15fr 0.65fr 0.20fr;
 	gap: 1rem;
 }
 
@@ -14,9 +14,6 @@ h1 {
 	margin: 1rem 2rem;
 	font-size: 1.5em;
 	font-weight: 600;
-}
-
-.myCart h1 {
 	margin-bottom: 0;
 }
 
