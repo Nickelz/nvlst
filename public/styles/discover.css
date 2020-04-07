@@ -1,0 +1,117 @@
+.discover {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: 0.25fr repeat(4, 1fr);
+	background: var(--panel-bg-color);
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	width: 100%;
+}
+
+h1 {
+	margin: 1rem 2rem;
+	font-size: 1.5em;
+	font-weight: 600;
+	margin-bottom: 0;
+	grid-area: 1 / 1 / 1 / 6;
+}
+
+h3 {
+	font-size: calc(0.4rem + 0.4vw);
+	font-weight: 600;
+	margin-top: 1.1%;
+	margin-bottom: 0.5%;
+	margin-left: 2rem;
+}
+
+.discover .foryou {
+	display: flex;
+	flex-direction: column;
+	grid-area: 2 / 1 / 2 / 6;
+}
+
+.discover .foryou .books {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	overflow: scroll;
+	scrollbar-width: none;
+}
+
+/* Book container */
+.discover .foryou .books .book {
+	display: flex;
+	flex-direction: row;
+	background-color: var(--bg-color);
+	border-radius: 7px;
+	height: 100%;
+	flex: 0 0 25%;
+	margin-left: 1%;
+}
+
+/* Offsets the first element */
+.discover .foryou .books .book:first-child {
+	margin-left: 2rem;
+}
+
+/* Image */
+.discover .foryou .books .book .cover {
+	background-image: url("./../images/please-see-us.jpg");
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 20%;
+	margin: 3.5%;
+}
+
+/* Information container */
+.discover .foryou .books .book .info {
+	display: flex;
+	flex-direction: column;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+/* Title */
+.discover .foryou .books .book .info span:nth-child(1) {
+	color: white;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: calc(0.30rem + 0.4vw);
+}
+
+/* Author */
+.discover .foryou .books .book .info span:nth-child(2) {
+	padding: auto 0;
+	color: var(--dark-white);
+	font-size: calc(0.10rem + 0.4vw);
+	font-weight: 300;
+}
+
+/* Rating */
+.discover .foryou .books .info .rating {
+	display: flex;
+	align-items: center;
+	font-size: calc(0.18rem + 0.4vw);
+	color: var(--off-white-color);
+}
+/* Rating span */
+.discover .foryou .books .info .rating span {
+	margin-left: 2%;
+}
+
+/* Reason */
+.discover .foryou .books .book .info span:nth-child(4) {
+	color: var(--dark-white);
+	font-size: calc(0.03rem + 0.4vw);
+	font-weight: 300;
+	font-style: italic;
+}
+
+.discover .browse {
+	grid-area: 3 / 1 / 6 / 4;
+}
+
+.discover .authors {
+	grid-area: 3 / 4 / 6 / 6;
+}
