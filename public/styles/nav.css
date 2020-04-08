@@ -23,8 +23,8 @@
 
 .sideNav ul li span {
 	color: #787C87;
-	font-weight: 600;
-	font-size: 80%;
+	font-weight: 500;
+	font-size: calc(0.25rem + 0.4vw);
 	text-transform: uppercase;
 
 	margin-left: 0.75rem;
@@ -33,7 +33,7 @@
 .sideNav ul li {
 	display: flex;
 	align-items: center;
-	height: 2.5rem;
+	height: 3.5vh;
 	padding-left: 2.5rem;
 	border: 1.5px solid transparent;
 	border-style: solid none solid none;
@@ -68,17 +68,17 @@
 
 	color: black;
 	text-transform: uppercase;
-	font-size: 0.85em;
+	font-size: calc(0.18rem + 0.4vw);
 	font-weight: 610;
 	justify-content: center;
 	align-items: center;
 
-	width: 70%;
-	height: 2rem;
+	width: 60%;
+	height: 1.75rem;
 	margin: 0 auto 1.5rem auto;
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1200px) {
 
 	.sideNav {
 		min-width: 70px;
@@ -102,7 +102,7 @@
 
 	#signUpLoginButton::before {
 		content: "Login";
-		font-size: 12px;
+		font-size: calc(0.35rem + 0.4vw);
 	}
 
 	#signUpLoginButton > span{
