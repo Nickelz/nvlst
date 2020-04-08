@@ -63,6 +63,7 @@
 }
 
 .container form input[type="submit"] {
+	padding: 0;
 	margin: unset;
 	margin-top: 1.75rem;
 	margin-right: 1.5rem;

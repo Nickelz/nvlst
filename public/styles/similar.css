@@ -1,0 +1,97 @@
+.similar{
+    display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	background: var(--panel-bg-color);
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	width: 100%;
+}
+.similar .title{
+    font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+margin: 10% 15%;
+
+	
+}
+.similar ul {
+	list-style: none;
+	width: 100%;
+	padding: 0;
+}
+.similar ul li span {
+	color: #FFFFFF;
+	font-weight: 600;
+	font-size: 80%;
+	text-transform: uppercase;
+
+	margin-left: 0.75rem;
+}
+.similar ul li {
+	display: flex;
+    height: 6rem;
+    align-items: center;
+
+	padding-left: 1.5rem;
+	border: 1.5px solid transparent;
+	border-style: solid none solid none;
+}
+
+.similar ul li a {
+	display: flex;
+	align-items: center;
+}
+.similar ul li:hover {
+	background: var(--panel-bg-color);
+	box-shadow: inset 0px -5px 30px rgba(16, 16, 16, 0.3), inset 0px 5px 30px rgba(0, 0, 0, 0.3);
+	border-color: var(--gold-color);
+}
+.uls{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    width: 9.5rem;
+    width: 65%;
+
+
+}
+.similarFont{
+    font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 13px;
+/* identical to box height */
+margin-left: 0.75rem;
+
+
+color: #5D636F;
+}
+@media screen and (max-width: 1000px) {
+
+.similar {
+    min-width: 70px;
+}
+
+.similar ul li span {
+    display: none;
+}
+.uls{
+    display: none;
+}
+
+.similar ul li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.similar .title {
+    display: block;
+    margin: 15px auto 20px auto;
+}
+
+
+}

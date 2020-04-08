@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<form lang="en">
 
 <head>
-	<?php include('./templates/header.php'); ?>
+	<!-- <?php include('./templates/header.php'); ?> -->
 
-	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<title>Search</title>
 
 	<link rel="stylesheet" href="./public/styles/main.css" type="text/css">
@@ -12,7 +12,6 @@
 	<link rel="stylesheet" href="./public/styles/search.css" type="text/css">
 	<title>Search</title>
 </head>
-
 
 <body>
 	<body>
@@ -22,20 +21,27 @@
 	
 				<ul>
 					<li>
-						<a href="#Search">
+						<a href="./search.html">
 							<img src="./public/images/icons8-search.svg" alt="Search" width="20px">
 							<span>Search</span>
 						</a>
 					</li>
 	
+					<li>
+						<a href="./discover.html">
+							<img src="./public/images/icons8-compass.svg" alt="Discover" width="20px">
+							<span>Discover</span>
+						</a>
+					</li>
+	
 					<li class="active">
-						<a href="#MyBooks">
+						<a href="./mybooks.html">
 							<img src="./public/images/icons8-books.svg" alt="My books" width="20px">
 							<span>My Books</span>
 						</a>
 					</li>
 					<li>
-						<a href="#MyReviews">
+						<a href="./myreviews.html">
 							<img src="./public/images/icons8-survey.svg" alt="My reviews" width="20px">
 							<span>My Reviews</span>
 						</a>
@@ -44,19 +50,19 @@
 	
 				<ul>
 					<li>
-						<a href="#Cart">
+						<a href="./cart.html">
 							<img src="./public/images/icons8-shopping_cart_with_money.svg" alt="Cart" width="20px">
 							<span>Cart</span>
 						</a>
 					</li>
 					<li>
-						<a href="#Lists">
+						<a href="./lists.html">
 							<img src="./public/images/icons8-wish_list.svg" alt="Lists" width="20px">
 							<span>Lists</span>
 						</a>
 					</li>
 					<li>
-						<a href="#Orders">
+						<a href="./orders.html">
 							<img src="./public/images/icons8-purchase_order.svg" alt="Orders" width="20px">
 							<span>Orders</span>
 						</a>
@@ -65,153 +71,95 @@
 	
 				<a href="#" id="signUpLoginButton"><span>Sign up / Login</span></a>
 			</div>
+
 			<div class="content">
 				<div class="search-container">
-					<form>
-						<img id="search-icon" src="./public/images/icons8-search.svg" alt="Search" width="30px">
-		
-						<input class="search-bar" type="search" placeholder="Search for book,auther,provider">
-		
-						<input class="reset-button" type="reset" id="reset" value="RESET">
-		
-						<input class="search-button" type="submit" id="search" value="Search">
-					</form>
-		
+					<img id="search-icon" src="./public/images/icons8-search.svg" alt="Search" width="30px">
+					<input class="search-bar" type="search" placeholder="Search for book,auther,provider">
+					<input class="reset-button" type="reset" id="reset" value="RESET">
+					<input class="search-button" type="submit" id="search" value="Search">
 				</div>
 				<div class="language-container">
-		
-		
 					<form action="#" method="GET">
-		
 						<h4>Language</h4>
-		
 						<ul>
-		
 							<li><input class="cbx" type="checkbox" name="language" id="arabic">
 								<label for="arabic" class="check">Arabic</label></li>
-		
 							<li><input type="checkbox" id="english" name="language" value="english">
 								<label for="english" class="check">English</label></li>
-		
 							<li><input type="checkbox" id="german" name="language" value="german">
 								<label for="german" class="check">German</label></li>
-		
 							<li><input type="checkbox" id="french" name="language" value="french">
 								<label for="french" class="check">French</label></li>
-		
 							<li><input type="checkbox" id="spanish" name="language" value="spanish">
 								<label for="spanish" class="check">Spanish</label></li>
-		
 							<li><input type="checkbox" id="chines" name="language" value="chiense">
 								<label for="chines" class="check">Chines (triditional)</label></li>
-		
 							<li><input type="checkbox" id="other" name="language" value="other">
 								<label for="other" class="check">Other</label></li>
-		
 						</ul>
 					</form>
 				</div>
 				<div class="gnre-container">
-		
 					<form action="#" method="GET">
-		
 						<h4>Genre</h4>
-		
 						<ul>
-		
 							<li><input type="checkbox" name="language" id="art">
 								<label for="art" class="check">Art</label></li>
-		
 							<li><input type="checkbox" id="business" name="language" value="business">
 								<label for="business" class="check">Bussiness</label></li>
-		
 							<li><input type="checkbox" id="children" children="language" value="children">
 								<label for="children" class="check">Children</label></li>
-		
 							<li><input type="checkbox" id="education" name="language" value="education">
 								<label for="education" class="check">Education</label></li>
-		
 							<li><input type="checkbox" id="law" name="language" value="law">
 								<label for="law" class="check">Law</label></li>
-		
 							<li><input type="checkbox" id="politics" name="language" value="politics">
 								<label for="politics" class="check">Politics</label></li>
-		
 							<li><input type="checkbox" id="romance" name="language" value="romance">
 								<label for="romance" class="check">Romance</label></li>
-		
 							<li><input type="checkbox" id="medical" name="language" value="medical">
 								<label for="medical" class="check">Medical</label></li>
-		
 							<li><input type="checkbox" id="mystery" name="language" value="mystery">
 								<label for="mystery" class="check">Mystery</label></li>
-		
 							<li><input type="checkbox" id="si-math" name="language" value="si-math">
 								<label for="si-math" class="check">Science &amp; math</label></li>
 						</ul>
-		
-				</form></div>
-				
+					</form>
+				</div>
 				<div class="iss">
-				
-				<div class="issn-container">
-		
-					<h4>ISSN</h4>
-					
-		
+					<div class="issn-container">
+						<h4>ISSN</h4>
 						<input class="text-issn" type="text" name="issn" id="issn" placeholder="xxxxxxxxxx">
-		
-		
-					
-				</div>
-		
-		
-				<div class="isbn-container">
-		
-					<h4>ISBN</h4>
-					
-		
+					</div>
+					<div class="isbn-container">
+						<h4>ISBN</h4>
 						<input class="text-isbn" type="text" name="isbn" id="isbn" placeholder="xxxx-xxxx">
-		
-		
-					
-				</div>
-		
+					</div>
 				</div>
 				<div class="publication-date">
-		
 					<h4>Publication Date</h4>
-				<form action="#">
-		
+					<form action="#">
 						<input class="date-month" type="text" name="year" id="month" placeholder="MM">
 						<input class="date-year" type="text" name="year" id="year" placeholder="YYYY">
-		
-		
 					</form>
 				</div>
 				<div class="trans-type">
-		
 					<form action="#" method="GET">
-		
 						<h4>Transaction Type</h4>
-		
 						<ul id="tt">
-		
 							<li><input type="checkbox" name="rent" id="rent">
 								<label for="rent">Rent</label></li>
-		
 							<li><input type="checkbox" id="purchase" name="purchase" value="purchase">
 								<label for="purchase" class="check">Purchase</label></li>
-		
 							<li><input type="checkbox" id="sample" children="sample" value="sample">
 								<label for="sample" class="check">Sample</label></li>
-		
 						</ul>
-		
-				</form></div>
+					</form>
+				</div>
 			</div>
-		</div> 
+		</div>
 	</body>
 </body>
 
-</html>
+</form>
