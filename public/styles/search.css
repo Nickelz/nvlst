@@ -229,7 +229,7 @@ input[type="search"]::placeholder {
 	background: #1F2023;
 	border: #1F2023;
 	color: #787C87;
-	font-family: Poppins, sans-serif;
+	font-size: calc(0.25rem + 0.4vw);
 	text-align: left;
 	width: 30%;
 	margin-right: 40%;
@@ -252,6 +252,8 @@ input[type="search"]::placeholder {
 	width: 7%;
 	background: #F5D8B9;
 	border: #F5D8B9;
+	font-size: calc(0.3rem + 0.4vw);
+	text-transform: uppercase;
 	font-family: Poppins, sans-serif;
 	font-weight: bold;
 	border-radius: 0px 8px 8px 0px;

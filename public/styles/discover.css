@@ -59,7 +59,7 @@ h3 {
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
-	width: 20%;
+	width: 65%;
 	margin: 3.5%;
 }
 
@@ -111,10 +111,11 @@ h3 {
 
 .discover .browse {
 	grid-area: 3 / 1 / 6 / 5;
+	margin-left: 0.75rem;
 }
 
-.discover .browse h3 {
-	margin-top: 3%;
+.discover .browse h3, .discover .authors h3 {
+	margin-top: 2vh;
 }
 
 .discover .browse .books {
@@ -149,6 +150,7 @@ h3 {
 
 .discover .authors {
 	grid-area: 3 / 5 / 6 / 6;
+	margin-top: 0.6vw;
 }
 
 .discover .authors .authorsContainer {
@@ -171,8 +173,4 @@ h3 {
 	margin-right: 4%;
 	width: 1.5vw;
 	height: 1.5vw;
-}
-
-.discover .authors h3 {
-	margin-top: 3%;
 }
