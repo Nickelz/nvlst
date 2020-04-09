@@ -34,6 +34,8 @@
 	display: flex;
 	align-items: center;
 	height: 3.5vh;
+	max-height: 45px;
+	min-height: 40px;
 	padding-left: 2.5rem;
 	border: 1.5px solid transparent;
 	border-style: solid none solid none;
@@ -49,12 +51,12 @@
 }
 
 .sideNav > ul:nth-of-type(2) {
-	margin-top: 40px;
-	margin-bottom: 40px;
+	margin-top: 2vh;
+	margin-bottom: 2vh;
 }
 
 
-.sideNav ul li:hover {
+.sideNav ul li:hover, #active {
 	background: var(--panel-bg-color);
 	box-shadow: inset 0px -5px 30px rgba(16, 16, 16, 0.3), inset 0px 5px 30px rgba(0, 0, 0, 0.3);
 	border-color: var(--gold-color);
