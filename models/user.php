@@ -6,26 +6,26 @@ class User {
 		$this -> _db = $db;
 	}
 
-	public function login($username, $password) {
-		$row = $this -> get_hash($username);
+	public function login($email, $password) {
+		$row = $this -> get_hash($email);
 
 		if (password_verify($password, $row['Password']) == 1) {
 			$_SESSION['loggedIn'] = true;
-			$_SESSION['Username'] = $row['Username'];
-			$_SESSION['UserID'] = $row['ID'];
-			echo "Logged in success";
+			$_SESSION['Email'] = $row['Email'];
+			$_SESSION['FullName'] = $row['First_Name'] . " " . $row['Last_Name'];
+			echo "Logged in successfully";
 			return true;
 		}
+		return false;
 	}
 
-	private function get_hash($username) {
-		$result = $this -> _db -> query("SELECT `ID`, `Username`, `Password` FROM `Users` WHERE `Username`=\"" . $username . "\";");
-
-		echo $result -> num_rows;
+	private function get_hash($email) {
+		$result = $this -> _db -> query("SELECT * FROM `Users` WHERE `Email`=\"" . $email . "\";");
 		return $result -> fetch_assoc();
 	}
 
 	public function logout() {
+		$_SESSION = array();
 		session_destroy();
 	}
 
