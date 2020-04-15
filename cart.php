@@ -25,6 +25,56 @@
 		<div class="myCart">
 				<h1>My Cart</h1>
 				<span>(8 Items)</span>
+				<div class="books">
+					<ul id="book">
+						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
+						<li id="bookImg">
+							<img src="./public/images/covers/9765456322123.jpg" alt="Book">
+						</li>
+						<li id="bookTitle">Ninth House</li>
+						<li id="bookAuthor">Leigh Bardugo</li>
+						<li id="bookPrice">SR 42.34</li>
+					</ul>
+
+					<ul id="book">
+						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
+						<li id="bookImg">
+							<img src="./public/images/covers/9765456322123.jpg" alt="Book">
+						</li>
+						<li id="bookTitle">Ninth House</li>
+						<li id="bookAuthor">Leigh Bardugo</li>
+						<li id="bookPrice">SR 42.34</li>
+					</ul>
+
+					<ul id="book">
+						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
+						<li id="bookImg">
+							<img src="./public/images/covers/9765456322123.jpg" alt="Book">
+						</li>
+						<li id="bookTitle">Ninth House</li>
+						<li id="bookAuthor">Leigh Bardugo</li>
+						<li id="bookPrice">SR 42.34</li>
+					</ul>
+
+					<ul id="book">
+						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
+						<li id="bookImg">
+							<img src="./public/images/covers/9765456322123.jpg" alt="Book">
+						</li>
+						<li id="bookTitle">Ninth House</li>
+						<li id="bookAuthor">Leigh Bardugo</li>
+						<li id="bookPrice">SR 42.34</li>
+					</ul>
+
+					<ul id="book">
+						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
+						<li id="bookImg">
+							<img src="./public/images/covers/9765456322123.jpg" alt="Book">
+						</li>
+						<li id="bookTitle">Ninth House</li>
+						<li id="bookAuthor">Leigh Bardugo</li>
+						<li id="bookPrice">SR 42.34</li>
+					</ul>
 
 				<?php
 				$whereIn = implode(',', $_SESSION['Cart']);
@@ -38,6 +88,7 @@
 		
 				<div class="books">
 					<ul id="book">
+						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
 						<li id="bookImg">
 						<img src="./public/images/covers/<?php echo $cartRow["ISBN"]; ?>.jpg" alt="Book">
 						</li>
