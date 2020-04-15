@@ -30,8 +30,9 @@ if(isset($_POST["Username"])) {
 	echo $query . "<br>";
 
 	if ($conn -> query($query) === TRUE) {
+        $user -> login($arr['Email'], $arr['Password']);
 		echo "User created successfully!";
-		header('Location: index.php?action=registered');
+		header('Location: cart.php?action=registered');
 		exit;
 	} else {
 		echo "Failed to create user: " . $conn -> error;

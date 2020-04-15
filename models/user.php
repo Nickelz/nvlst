@@ -11,7 +11,7 @@ class User {
 
 		if (password_verify($password, $row['Password']) == 1) {
 			$_SESSION['loggedIn'] = true;
-			$_SESSION['Email'] = $row['Email'];
+			$_SESSION['UserID'] = $row['ID'];
 			$_SESSION['FullName'] = $row['First_Name'] . " " . $row['Last_Name'];
 			echo "Logged in successfully";
 			return true;
