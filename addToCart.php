@@ -6,7 +6,6 @@
     }
     array_push($_SESSION['Cart'], $_GET['id']);
 
-    
+    header("location: cart.php");
 ?>
 
-<a href="cart.php">cart </a>
