@@ -31,7 +31,6 @@ if(isset($_POST["Username"])) {
 
 	if ($conn -> query($query) === TRUE) {
         $user -> login($arr['Email'], $arr['Password']);
-		echo "User created successfully!";
 		header('Location: cart.php?action=registered');
 		exit;
 	} else {

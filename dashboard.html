@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>The Novelist</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="./public/styles/main.css" type="text/css">
+	<link rel="stylesheet" href="./public/styles/nav.css" type="text/css">
+	<link rel="stylesheet" href="./public/styles/dashboard.css" type="text/css">
+	<link rel="shortcut icon" href="./public/images/favicon.png" type="image/x-icon">
+</head>
+<body>
+	<center>
+		<img src="./public/images/Logo.svg" alt="The Novelist">
+	</center>
+	<div class="container">
+		<div class="controls">
+			<div class="search">
+				<img src="./public/images/icons8-search.svg" alt="Search">
+				<input type="search" name="search" placeholder="Search for Users, Books or Providers  ..">
+			</div>
+			<div class="segmentedControls">
+				<input type="radio" name="segmentedControl" id="Users" checked>
+				<label for="Users">Users</label>
+				<input type="radio" name="segmentedControl" id="Books">
+				<label for="Books">Books</label>
+				<input type="radio" name="segmentedControl" id="Providers">
+				<label for="Providers">Providers</label>
+			</div>
+			<div class="actions">
+				<div>
+					<img src="./public/images/icons8-refresh.svg" alt="RELOAD">
+					<button>Reload table</button>
+				</div>
+				<div>
+					<img src="./public/images/icons8-add.svg" alt="ADD">
+					<button>Add new book</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="table">
+			<div class="head">
+				<input type="checkbox" name="Select">
+				<span>ID</span>
+				<span>Cover</span>
+				<span>Title</span>
+				<span>Author</span>
+				<span>Provider</span>
+				<span>Genre</span>
+				<span>Language</span>
+				<span>Released</span>
+				<span>ISBN</span>
+				<span>ISSN</span>
+				<span>Price</span>
+				<span>Actions</span>
+			</div>
+			<hr>
+
+			<div class="row">
+				<input type="checkbox" name="Select">
+				<span>1</span>
+				<img src="./public/images/covers/9765456322123.jpg" alt="COVER"/>
+				<span>Ninth House</span>
+				<span>Liz Moore</span>
+				<span>The Novelist</span>
+				<span>Fantasy</span>
+				<span>English</span>
+				<span>2018</span>
+				<span>8765567654567</span>
+				<span>88787659</span>
+				<span>842 SR</span>
+				<div class="actionButtons">
+					<a href="#">
+						<img src="./public/images/icons8-edit.svg" alt="Edit">
+					</a>
+					<a href="#">
+						<img src="./public/images/icons8-delete_bin.svg" alt="Delete">
+					</a>
+				</div>
+			</div>
+			<hr>
+
+			<div class="row">
+				<input type="checkbox" name="Select">
+				<span>1</span>
+				<img src="./public/images/covers/9765456322123.jpg" alt="COVER"/db>
+				<span>Ninth House</span>
+				<span>Liz Moore</span>
+				<span>The Novelist</span>
+				<span>Fantasy</span>
+				<span>English</span>
+				<span>2018</span>
+				<span>8765567654567</span>
+				<span>88787659</span>
+				<span>842 SR</span>
+				<div class="actionButtons">
+					<a href="#">
+						<img src="./public/images/icons8-edit.svg" alt="Edit">
+					</a>
+					<a href="#">
+						<img src="./public/images/icons8-delete_bin.svg" alt="Delete">
+					</a>
+				</div>
+			</div>
+			<hr>
+
+			<div class="row">
+				<input type="checkbox" name="Select">
+				<span>1</span>
+				<img src="./public/images/covers/9765456322123.jpg" alt="COVER"/db>
+				<span>Ninth House</span>
+				<span>Liz Moore</span>
+				<span>The Novelist</span>
+				<span>Fantasy</span>
+				<span>English</span>
+				<span>2018</span>
+				<span>8765567654567</span>
+				<span>88787659</span>
+				<span>842 SR</span>
+				<div class="actionButtons">
+					<a href="#">
+						<img src="./public/images/icons8-edit.svg" alt="Edit">
+					</a>
+					<a href="#">
+						<img src="./public/images/icons8-delete_bin.svg" alt="Delete">
+					</a>
+				</div>
+			</div>
+			<hr>
+		</div>
+	</div>
+</body>
+</html>

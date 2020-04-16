@@ -56,16 +56,12 @@ h1 {
 #book li:first-of-type {
 	width: 100%;
 	display: none;
-	opacity: 0;
-	transition: all .2s ease-in-out;
 }
 
 #book:hover li:first-of-type {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	opacity: 1;
-	transition: all .2s ease-in-out;
 }
 
 #book li:first-of-type input[type="image"] {
