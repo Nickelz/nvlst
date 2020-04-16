@@ -14,70 +14,44 @@
 
 <body>
 	<div class="container">
-	<?php require("./includes/nav.php"); ?>
+	<?php 
+	require("./includes/nav.php");
+	require("./includes/config.php");
+	require("./models/api.php");
+	$totalPrice= 0;
+	 ?>
+		
+	
 		<div class="myCart">
 				<h1>My Cart</h1>
 				<span>(8 Items)</span>
 				<div class="books">
-					<ul id="book">
-						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
-						<li id="bookImg">
-							<img src="./public/images/covers/9765456322123.jpg" alt="Book">
-						</li>
-						<li id="bookTitle">Ninth House</li>
-						<li id="bookAuthor">Leigh Bardugo</li>
-						<li id="bookPrice">SR 42.34</li>
-					</ul>
+			
 
+				<?php
+				$whereIn = implode(',', $_SESSION['Cart']);
+				echo $whereIn;
+ 				$cartResult = $conn -> query("SELECT * FROM `Books` WHERE `ID` IN ($whereIn)") or die($conn -> error);
+ 				while($cartRow = $cartResult -> fetch_assoc())  { 
+					 $totalPrice += $cartRow["Price"];
+					 ?>
+				
+				
+		
+				<div class="books">
 					<ul id="book">
 						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
 						<li id="bookImg">
-							<img src="./public/images/covers/9765456322123.jpg" alt="Book">
+						<img src="./public/images/covers/<?php echo $cartRow["ISBN"]; ?>.jpg" alt="Book">
 						</li>
-						<li id="bookTitle">Ninth House</li>
-						<li id="bookAuthor">Leigh Bardugo</li>
-						<li id="bookPrice">SR 42.34</li>
+						<li  id="bookTitle"><?php echo  $cartRow["Title"]  ?></li>
+						<li id="bookAuthor"><?php echo $cartRow["Author_Name"] ?></li>
+						<li id="bookPrice"><?php echo $cartRow["Price"]?> SR </li>
 					</ul>
-
-					<ul id="book">
-						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
-						<li id="bookImg">
-							<img src="./public/images/covers/9765456322123.jpg" alt="Book">
-						</li>
-						<li id="bookTitle">Ninth House</li>
-						<li id="bookAuthor">Leigh Bardugo</li>
-						<li id="bookPrice">SR 42.34</li>
-					</ul>
-
-					<ul id="book">
-						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
-						<li id="bookImg">
-							<img src="./public/images/covers/9765456322123.jpg" alt="Book">
-						</li>
-						<li id="bookTitle">Ninth House</li>
-						<li id="bookAuthor">Leigh Bardugo</li>
-						<li id="bookPrice">SR 42.34</li>
-					</ul>
-
-					<ul id="book">
-						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
-						<li id="bookImg">
-							<img src="./public/images/covers/9765456322123.jpg" alt="Book">
-						</li>
-						<li id="bookTitle">Ninth House</li>
-						<li id="bookAuthor">Leigh Bardugo</li>
-						<li id="bookPrice">SR 42.34</li>
-					</ul>
-
-					<ul id="book">
-						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
-						<li id="bookImg">
-							<img src="./public/images/covers/9765456322123.jpg" alt="Book">
-						</li>
-						<li id="bookTitle">Ninth House</li>
-						<li id="bookAuthor">Leigh Bardugo</li>
-						<li id="bookPrice">SR 42.34</li>
-					</ul>
+					<?php ;
+				} ?>
+			
+					
 				</div>
 		</div>
 		<div class="checkout">
@@ -122,11 +96,11 @@
 			<div class="totals">
 				<ul>
 					<li>Subtotal:</li>
-					<li>SAR 337.85</li>
+					<li><?php echo $totalPrice ?> SAR </li>
 				</ul>
 				<ul>
 					<li>Value Added Tax (VAT):</li>
-					<li>SAR 50.808</li>
+					<li><?php echo $totalPrice*0.05 ?> SAR</li>
 				</ul>
 				<ul>
 					<li>Shipping:</li>
@@ -134,7 +108,7 @@
 				</ul>
 				<ul>
 					<li>Total:</li>
-					<li>SAR 389.528</li>
+					<li><?php echo $totalPrice+($totalPrice*0.05) ?> SAR</li>
 				</ul>
 			</div>
 		</div>
