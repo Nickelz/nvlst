@@ -35,7 +35,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="./lists.html">
+				<a href="./wishlist.php">
 					<img src="./public/images/icons8-wish_list.svg" alt="Lists" width="20px">
 					<span>Lists</span>
 				</a>

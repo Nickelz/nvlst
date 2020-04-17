@@ -64,8 +64,8 @@
          </div>
 
          <div class="buttons">
-         <button class="RentButton">RENT THIS BOOK</button>
-         <a type="submit" <?php echo "href='addToCart.php?id=".$row['ID']."' "?> class="AddCart">ADD TO CART</a>
+         <button class="AddCart">Add to wishlist</button>
+         <a type="submit" <?php echo "href='addToCart.php?id=".$row['ID']."' "?> class="RentButton">ADD TO CART</a>
          </div>
              <div class="pic">
                 <img  src="./public/images/covers/<?php echo $row["ISBN"]; ?>.jpg " style="width: 230px; height: 348px;">
