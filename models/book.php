@@ -32,6 +32,6 @@ class Book {
 	}
 
 	private function fetchedRow($row) {
-		return new Book($this -> _db, $row['ID'], $row['ISBN'], $row['ISSN'], $row['Author_Name'], $row['Provider'], $row['Release_Date'], $row['Language'], $row['Genre'], $row['Price'], $row['Title']);
+		return new Book($this -> _db, $row['ID'], $row['ISBN'], $row['Number_of_Pages'], $row['Author_Name'], $row['Provider'], $row['Release_Date'], $row['Language'], $row['Genre'], $row['Price'], $row['Title']);
 	}
 }

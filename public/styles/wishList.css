@@ -1,0 +1,260 @@
+.container {
+	display: grid;
+	grid-template-columns: 0.15fr 0.85fr;
+	gap: 1rem;
+}
+
+.all-containers
+{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 110%;
+ }
+
+.small-container
+{   display: flex;
+    flex-direction: column;
+    background: #1F2023;
+    width: 30%;
+    height: 38%;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-right: 1.5%;
+    padding-bottom: 1%;
+    padding-right: 1%;
+
+}
+
+ .wish-list-container  img
+{
+    width: 6% ;
+    
+}
+
+.read-later  img
+{
+    width: 6% ;
+    
+}
+.sugg-by-friend  img
+{
+    width: 6% ;
+    
+}
+
+
+.small-container > div
+{
+    margin-top: 4%;
+
+}
+
+.two-words
+{
+    display: flex;
+    flex-direction: row;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 84%;
+}
+
+.two-words > a
+{
+    font-size: 80%;
+    color: #ffffff;
+
+}
+
+.two-words > label
+{
+    margin-right: 74%;
+    margin-left: 6%;
+
+}
+
+.wish-list-container
+{
+    display: flex;
+    flex-direction: row;
+    background: #161618;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-left: 3.75%;
+    padding: 2%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 77%;
+}
+
+.wish-list-container > label
+{
+    margin-left: 4.75%;
+}
+
+
+.read-later
+{
+    display: flex;
+    flex-direction: row;
+    background: #161618;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 4px; 
+    margin-left: 3.75%;
+    padding: 2%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 77%;
+
+}
+
+.read-later > label
+{
+    margin-left: 4.75%;
+    margin-right: 30.75%;
+
+}
+
+
+.sugg-by-friend
+{
+    display: flex;
+    flex-direction: row;
+    background: #161618;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-left: 3.75%;
+    margin-left: 3.75%;
+    padding: 2%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 77%;
+}
+
+.sugg-by-friend > label
+{
+    margin-left: 4.75%;
+    margin-right: 21.5%;
+
+}
+
+#trash-icon 
+{
+    margin-left: 4%;
+}
+
+.big
+{  
+     display: flex;
+    flex-direction: column;
+    background: #1F2023;
+    width: 80%;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 9px;
+    font-size: 77%;
+    padding-top: 0.25%;
+    width: 65%;
+}
+
+.one-word
+{   
+    margin-top: 1.5%;
+    margin-left: 6%;
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 94%;
+}
+
+.top-row
+{   
+    margin-top: 0.5%;
+    display: flex;
+    flex-direction: row;
+    background: #1F2023;
+    width: 50em;
+    height: 35.5%;
+    margin-left: 3%;
+    margin-top: 2.75%;
+
+}
+
+.botton-row
+{
+    display: flex;
+    flex-direction: row;
+    background: #1F2023;
+    width: 50em;
+    height: 35.5%;
+    margin-left: 3%;
+    margin-top: 7%;
+}
+
+ 
+
+.books {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+    margin: 2rem;
+}
+
+#book {
+    
+	background-color: var(--panel-bg-secondary-color);
+    border-radius: 1rem;
+	margin-top: 3rem;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+    border-radius: 7px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 15rem;
+	height: 7rem;
+    border: 2px solid transparent;
+    margin-right: 1.75%;
+}
+
+#book img {
+    width: 86%;
+}
+
+#book > *:last-child {
+	margin-bottom: 0.5rem;
+}
+
+#book:hover {
+	border: 2px solid var(--gold-color);
+}
+
+#bookTitle {
+	color: var(--off-white-color);
+    font-weight: bold;
+    font-size: 80%;
+    font-family: Poppins , sans-serif;
+    font-style: normal;
+}
+
+#bookAuthor {
+	color: var(--secondary-text-color);
+	font-size: 0.85em;
+    font-style: italic;
+    font-family: Poppins , sans-serif;
+font-style: italic;
+font-weight: normal;
+font-size: 65%;
+}
+
+#bookPrice {
+	
+    font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 80%;
+}

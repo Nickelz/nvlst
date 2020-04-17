@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
 			<a class="signUp" href="./signup.php">Sign Up</a>
 			<div class="backToBrowsing">
 				<img src="./public/images/icons8-long_arrow_left.svg" alt="arrow" width="21px">
-				<a href="#">Back to browsing</a>
+				<a href="./discover.php">Back to browsing</a>
 			</div>
 		</div>
 	</div>
