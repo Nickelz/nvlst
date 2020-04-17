@@ -1,3 +1,9 @@
+<?php
+require("./includes/config.php");
+require("./models/api.php");
+$all_books = $book -> get_all();
+$all_authors = $book -> get_authors();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,62 +16,12 @@
 	<link rel="stylesheet" href="./public/styles/main.css" type="text/css">
 	<link rel="stylesheet" href="./public/styles/nav.css" type="text/css">
 	<link rel="stylesheet" href="./public/styles/discover.css" type="text/css">
+	<link rel="shortcut icon" href="./public/images/favicon.png" type="image/x-icon">
 </head>
 
 <body>
 	<div class="container">
-		<div>
-			<div class="sideNav">
-				<img src="./public/images/Logo.svg" alt="Logo" class="logo">
-				<ul>
-					<li>
-						<a href="./search.html">
-							<img src="./public/images/icons8-search.svg" alt="Search" width="20px">
-							<span>Search</span>
-						</a>
-					</li>
-					<li id="active">
-						<a href="./discover.html">
-							<img src="./public/images/icons8-compass.svg" alt="Discover" width="20px">
-							<span>Discover</span>
-						</a>
-					</li>
-					<li>
-						<a href="./mybooks.html">
-							<img src="./public/images/icons8-books.svg" alt="My books" width="20px">
-							<span>My Books</span>
-						</a>
-					</li>
-					<li>
-						<a href="./myreviews.html">
-							<img src="./public/images/icons8-survey.svg" alt="My reviews" width="20px">
-							<span>My Reviews</span>
-						</a>
-					</li>
-				</ul>
-				<ul>
-					<li>
-						<a href="./cart.html">
-							<img src="./public/images/icons8-shopping_cart_with_money.svg" alt="Cart" width="20px">
-							<span>Cart</span>
-						</a>
-					</li>
-					<li>
-						<a href="./lists.html">
-							<img src="./public/images/icons8-wish_list.svg" alt="Lists" width="20px">
-							<span>Lists</span>
-						</a>
-					</li>
-					<li>
-						<a href="./orders.html">
-							<img src="./public/images/icons8-purchase_order.svg" alt="Orders" width="20px">
-							<span>Orders</span>
-						</a>
-					</li>
-				</ul>
-				<a href="#" id="signUpLoginButton"><span>Sign up / Login</span></a>
-			</div>
-		</div>
+	<?php require("./includes/nav.php"); ?>
 
 		<div class="discover">
 			<h1>Discover</h1>
@@ -174,137 +130,32 @@
 			<div class="browse">
 				<h3>Browse</h3>
 				<div class="books">
+					<?php
+					foreach($all_books as $book_row):
+					?>
 					<div class="book">
-						<img src="./public/images/book-test.jpg" alt="Book">
-						<span>Ninth House</span>
-						<span>Leigh Bardugo</span>
+						<?php echo "<a href=proudctView.php?id=" . $book_row['ID'] . ">" ?>
+						<img src="./public/images/covers/<?php echo $book_row["ISBN"]; ?>.jpg" style="width: 138px; height: 204px;" alt="Book">
+						</a>
+						<span><?php echo $book_row["Title"]; ?></span>
+						<span><?php echo $book_row["Author_Name"]; ?></span>
+						
 					</div>
-
-					<div class="book">
-						<img src="./public/images/book-test.jpg" alt="Book">
-						<span>Ninth House</span>
-						<span>Leigh Bardugo</span>
-					</div>
-
-					<div class="book">
-						<img src="./public/images/book-test.jpg" alt="Book">
-						<span>Ninth House</span>
-						<span>Leigh Bardugo</span>
-					</div>
-
-					<div class="book">
-						<img src="./public/images/book-test.jpg" alt="Book">
-						<span>Ninth House</span>
-						<span>Leigh Bardugo</span>
-					</div>
-
-					<div class="book">
-						<img src="./public/images/book-test.jpg" alt="Book">
-						<span>Ninth House</span>
-						<span>Leigh Bardugo</span>
-					</div>
-
-					<div class="book">
-						<img src="./public/images/book-test.jpg" alt="Book">
-						<span>Ninth House</span>
-						<span>Leigh Bardugo</span>
-					</div>
-
-					<div class="book">
-						<img src="./public/images/book-test.jpg" alt="Book">
-						<span>Ninth House</span>
-						<span>Leigh Bardugo</span>
-					</div>
-
-					<div class="book">
-						<img src="./public/images/book-test.jpg" alt="Book">
-						<span>Ninth House</span>
-						<span>Leigh Bardugo</span>
-					</div>
-
-					<div class="book">
-						<img src="./public/images/book-test.jpg" alt="Book">
-						<span>Ninth House</span>
-						<span>Leigh Bardugo</span>
-					</div>
-
-					<div class="book">
-						<img src="./public/images/book-test.jpg" alt="Book">
-						<span>Ninth House</span>
-						<span>Leigh Bardugo</span>
-					</div>
-
-					<div class="book">
-						<img src="./public/images/book-test.jpg" alt="Book">
-						<span>Ninth House</span>
-						<span>Leigh Bardugo</span>
-					</div>
-
-					<div class="book">
-						<img src="./public/images/book-test.jpg" alt="Book">
-						<span>Ninth House</span>
-						<span>Leigh Bardugo</span>
-					</div>
-
-					<div class="book">
-						<img src="./public/images/book-test.jpg" alt="Book">
-						<span>Ninth House</span>
-						<span>Leigh Bardugo</span>
-					</div>
+					<?php
+					endforeach;
+					?>
 				</div>
 			</div>
 
 			<div class="authors">
 				<h3>Authors</h3>
 				<div class="authorsContainer">
+					<?php foreach($all_authors as $author): ?>
 					<div class="author">
-						<img src="./public/images/brown-tobby.jpg" alt="Author">
-						<span>Brown Tobby</span>
+						<img src="<?php echo GOODREADS::get_author_image($author) ?>" alt="Author">
+						<span><?php echo $author; ?></span>
 					</div>
-					<div class="author">
-						<img src="./public/images/brown-tobby.jpg" alt="Author">
-						<span>Brown Tobby</span>
-					</div>
-					<div class="author">
-						<img src="./public/images/brown-tobby.jpg" alt="Author">
-						<span>Brown Tobby</span>
-					</div>
-					<div class="author">
-						<img src="./public/images/brown-tobby.jpg" alt="Author">
-						<span>Brown Tobby</span>
-					</div>
-					<div class="author">
-						<img src="./public/images/brown-tobby.jpg" alt="Author">
-						<span>Brown Tobby</span>
-					</div>
-					<div class="author">
-						<img src="./public/images/brown-tobby.jpg" alt="Author">
-						<span>Brown Tobby</span>
-					</div>
-					<div class="author">
-						<img src="./public/images/brown-tobby.jpg" alt="Author">
-						<span>Brown Tobby</span>
-					</div>
-					<div class="author">
-						<img src="./public/images/brown-tobby.jpg" alt="Author">
-						<span>Brown Tobby</span>
-					</div>
-					<div class="author">
-						<img src="./public/images/brown-tobby.jpg" alt="Author">
-						<span>Brown Tobby</span>
-					</div>
-					<div class="author">
-						<img src="./public/images/brown-tobby.jpg" alt="Author">
-						<span>Brown Tobby</span>
-					</div>
-					<div class="author">
-						<img src="./public/images/brown-tobby.jpg" alt="Author">
-						<span>Brown Tobby</span>
-					</div>
-					<div class="author">
-						<img src="./public/images/brown-tobby.jpg" alt="Author">
-						<span>Brown Tobby</span>
-					</div>
+					<?php endforeach; ?>
 				</div>
 			</div>
 		</div>

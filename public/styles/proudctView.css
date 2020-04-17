@@ -88,8 +88,13 @@ font-size: 14px;
 line-height: 21px;
 align-items: center;
 
+
+
 color: #C9C9C9;
 }
+
+
+
 .price{
     /*
     grid-row: 4;
@@ -119,6 +124,12 @@ grid-column: 1;
 grid-row: 2/6;
 margin-left: 2em;
  }
+.pic img{
+    width: 230px;
+    height: 348px;
+ }
+
+ 
  .buttons{
     grid-row: 5;
         grid-column: 2/4;
