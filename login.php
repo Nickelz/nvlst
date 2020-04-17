@@ -8,7 +8,7 @@ if(isset($error))
 
 if ($user -> is_logged_in()) {
 	echo htmlspecialchars($_SESSION['Email'], ENT_QUOTES);
-	header('Location: cart.php');
+	header('Location: discover.php');
 	exit;
 }
 

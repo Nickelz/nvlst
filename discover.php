@@ -63,7 +63,12 @@ $recentlist=$_COOKIE['recent'];
 				<h3>Browse</h3>
 				<div class="books">
 					<?php
+					$j=0;
 					foreach($all_books as $book_row):
+						if($j==5){ // number of books in discover
+							break;}
+						else
+							$j++	
 					?>
 					<div class="book">
 						<?php echo "<a href=proudctView.php?id=" . $book_row['ID'] . ">" ?>
@@ -74,6 +79,7 @@ $recentlist=$_COOKIE['recent'];
 						
 					</div>
 					<?php
+					
 					endforeach;
 					?>
 				</div>
