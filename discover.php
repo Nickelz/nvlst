@@ -134,9 +134,12 @@ $all_authors = $book -> get_authors();
 					foreach($all_books as $book_row):
 					?>
 					<div class="book">
-						<img src="./public/images/covers/<?php echo $book_row["ISBN"]; ?>.jpg" alt="Book">
+						<?php echo "<a href=proudctView.php?id=" . $book_row['ID'] . ">" ?>
+						<img src="./public/images/covers/<?php echo $book_row["ISBN"]; ?>.jpg" style="width: 138px; height: 204px;" alt="Book">
+						</a>
 						<span><?php echo $book_row["Title"]; ?></span>
 						<span><?php echo $book_row["Author_Name"]; ?></span>
+						
 					</div>
 					<?php
 					endforeach;

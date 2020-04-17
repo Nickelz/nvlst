@@ -68,8 +68,9 @@
          <a type="submit" <?php echo "href='addToCart.php?id=".$row['ID']."' "?> class="AddCart">ADD TO CART</a>
          </div>
              <div class="pic">
-                <a href=""> <img  src="./public/images/covers/<?php echo $row["ISBN"]; ?>.jpg"></a>
+                <img  src="./public/images/covers/<?php echo $row["ISBN"]; ?>.jpg " style="width: 230px; height: 348px;">
 
+                    
              </div>
              
               <div class="grpD">

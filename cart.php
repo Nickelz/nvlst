@@ -32,7 +32,8 @@
 				$whereIn = implode(',', $_SESSION['Cart']);
 				if(!empty($_SESSION['Cart'])){
 					
- 				$cartResult = $conn -> query("SELECT * FROM `Books` WHERE `ID` IN ($whereIn)") or die($conn -> error);
+				 $cartResult = $conn -> query("SELECT * FROM `Books` WHERE `ID` IN ($whereIn)") or die($conn -> error);
+				 echo $whereIn;
  				while($cartRow = $cartResult -> fetch_assoc())  { 
 					 $totalPrice += $cartRow["Price"];
 					 ?>
@@ -43,7 +44,7 @@
 				<div class="books">
 					<ul id="book">
 
-					
+						
 						<?php echo "<a href=deleteFromCart.php?id=" . $cartRow['ID'] . ">" ?>
 						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
 						</a>
@@ -126,6 +127,10 @@
 				<ul>
 					<li>Total:</li>
 					<li><?php echo $totalPrice+($totalPrice*0.05) ?> SAR</li>
+					
+				</ul>
+				<ul>
+				<li><a <?php echo "href=./checkout.php?order=$whereIn " ?>> Place Order</a>
 				</ul>
 			</div>
 		</div>
