@@ -1,6 +1,6 @@
 <html>
     <head>
-   <title>proudctView</title>     
+   <title>The Novelist</title>     
    <style>
 
        
@@ -10,10 +10,9 @@
    </style>
       <link rel="stylesheet" href="./public/styles/similar.css" type="text/css">
       <link rel="stylesheet" href="./public/styles/proudctView.css" type="text/css">
-   <link rel="stylesheet" href="./public/styles/nav.css" type="text/css">
-   <link rel="stylesheet" href="./public/styles/cart.css" type="text/css">
-   	 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
-
+      <link rel="stylesheet" href="./public/styles/nav.css" type="text/css">
+      <link rel="stylesheet" href="./public/styles/cart.css" type="text/css">
+   	  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">          <link rel="shortcut icon" href="./public/images/favicon.png" type="image/x-icon">
     </head>
     <body>
         
@@ -44,7 +43,8 @@
         if ($result = mysqli_query($conn, $sql))
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_array($result)){
-            
+                    $genre=$row["Genre"];
+                    $not=$row["ID"];
             ?>
          <div class="grp">
              <div class="rate">
@@ -152,15 +152,16 @@
 
 
               <ul>
-                 <li><a href="#"><img src="./public/images/49803373 2.svg" width="50px"><div class="uls"><h3 class="similarFont">jasmin kaur</h3><span>when you ask me where i’m going</span></div><img src="./public/images/icons8-forward 1.svg"></a></li>
-                 <li><a href="#"><img src="./public/images/49803373 2.svg" width="50px"><div class="uls"><h3 class="similarFont">jasmin kaur</h3><span>when you ask me where i’m going</span></div><img src="./public/images/icons8-forward 1.svg"></a></li>
-				 <li><a href="#"><img src="./public/images/49803373 2.svg" width="50px"><div class="uls"><h3 class="similarFont">jasmin kaur</h3><span>when you ask me where i’m going</span></div><img src="./public/images/icons8-forward 1.svg"></a></li>
-				 <li><a href="#"><img src="./public/images/49803373 2.svg" width="50px"><div class="uls"><h3 class="similarFont">jasmin kaur</h3><span>when you ask me where i’m going</span></div><img src="./public/images/icons8-forward 1.svg"></a></li>
-				 <li><a href="#"><img src="./public/images/49803373 2.svg" width="50px"><div class="uls"><h3 class="similarFont">jasmin kaur</h3><span>when you ask me where i’m going</span></div><img src="./public/images/icons8-forward 1.svg"></a></li>
-				 <li><a href="#"><img src="./public/images/49803373 2.svg" width="50px"><div class="uls"><h3 class="similarFont">jasmin kaur</h3><span>when you ask me where i’m going</span></div><img src="./public/images/icons8-forward 1.svg"></a></li>
+                  <?php
+                  
+                  
+                    $simResult = $conn -> query("SELECT * FROM `Books` WHERE `ID` !='$not' AND`Genre`='$genre'") or die($conn -> error);
 
- 
-
+ 				    while($simRow = $simResult -> fetch_assoc())  { ?>
+                <li> <?php echo "<a href=proudctView.php?id=" . $simRow['ID'] . ">"?><img src="./public/images/covers/<?php echo $simRow["ISBN"]; ?>.jpg" width="50px"><div class="uls"><h3 class="similarFont"><?php echo $simRow['Author_Name']?></h3><span><?php echo $simRow['Title']?></span></div><img src="./public/images/icons8-forward 1.svg"></a></li> 
+                 <?php
+                }
+?>
 			   </ul>
 
 			 
