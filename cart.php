@@ -30,18 +30,31 @@
 
 				<?php
 				$whereIn = implode(',', $_SESSION['Cart']);
-				echo $whereIn;
- 				$cartResult = $conn -> query("SELECT * FROM `Books` WHERE `ID` IN ($whereIn)") or die($conn -> error);
+				if(!empty($_SESSION['Cart'])){
+					
+				 $cartResult = $conn -> query("SELECT * FROM `Books` WHERE `ID` IN ($whereIn)") or die($conn -> error);
+				 echo $whereIn;
  				while($cartRow = $cartResult -> fetch_assoc())  { 
 					 $totalPrice += $cartRow["Price"];
 					 ?>
 				
 				
 		
+				
 				<div class="books">
 					<ul id="book">
+
+						
+						<?php echo "<a href=deleteFromCart.php?id=" . $cartRow['ID'] . ">" ?>
 						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
+						</a>
+
+
+
 						<li id="bookImg">
+						
+						
+
 						<img src="./public/images/covers/<?php echo $cartRow["ISBN"]; ?>.jpg" alt="Book">
 						</li>
 						<li  id="bookTitle"><?php echo  $cartRow["Title"]  ?></li>
@@ -49,7 +62,12 @@
 						<li id="bookPrice"><?php echo $cartRow["Price"]?> SR </li>
 					</ul>
 					<?php ;
-				} ?>
+				}
+			}
+				else echo "Cart Empty";
+				
+
+				?>
 			
 					
 				</div>
@@ -60,18 +78,18 @@
 				<h5>Account Information</h5>
 				<div>
 					<img src="./public/images/icons8-user.svg" alt="Name">
-					<span>Abdulaziz Ibrahim</span>
+					<span><?php echo $_SESSION['FullName'] ?></span>
 				</div>
 				<div>
 					<img src="./public/images/icons8-email.svg" alt="Email">
-					<span>mk@ahmed.com</span>
+					<span><?php echo $_SESSION['Email'] ?></span>
 				</div>
 			</div>
 			<div class="infoSection">
 				<h5>Shipping Information</h5>
 				<div>
 					<img src="./public/images/icons8-user.svg" alt="Name">
-					<span>Abdulaziz Ibrahim</span>
+					<span><?php echo $_SESSION['FullName'] ?></span>
 				</div>
 				<div>
 					<img src="./public/images/icons8-address.svg" alt="Address">
@@ -109,6 +127,10 @@
 				<ul>
 					<li>Total:</li>
 					<li><?php echo $totalPrice+($totalPrice*0.05) ?> SAR</li>
+					
+				</ul>
+				<ul>
+				<li><a <?php echo "href=./checkout.php?order=$whereIn " ?>> Place Order</a>
 				</ul>
 			</div>
 		</div>

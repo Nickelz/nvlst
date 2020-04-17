@@ -13,6 +13,7 @@ class User {
 			$_SESSION['loggedIn'] = true;
 			$_SESSION['UserID'] = $row['ID'];
 			$_SESSION['FullName'] = $row['First_Name'] . " " . $row['Last_Name'];
+			$_SESSION['Email'] = $row['Email'];
 			echo "Logged in successfully";
 			return true;
 		}

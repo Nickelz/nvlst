@@ -16,63 +16,36 @@
 
     </head>
     <body>
+        
+    
         <div class="container">
-            <div class="sideNav">
-                <img src="./public/images/Logo.svg" alt="Logo" class="logo">
-    
-                <ul>
-                    <li>
-                        <a href="#Search">
-                            <img src="./public/images/icons8-search.svg" alt="Search" width="20px">
-                            <span>Search</span>
-                        </a>
-                    </li>
-    
-                    <li class="active">
-                        <a href="#MyBooks">
-                            <img src="./public/images/icons8-books.svg" alt="My books" width="20px">
-                            <span>My Books</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#MyReviews">
-                            <img src="./public/images/icons8-survey.svg" alt="My reviews" width="20px">
-                            <span>My Reviews</span>
-                        </a>
-                    </li>
-                </ul>
-    
-                <ul>
-                    <li>
-                        <a href="#Cart">
-                            <img src="./public/images/icons8-shopping_cart_with_money.svg" alt="Cart" width="20px">
-                            <span>Cart</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#Lists">
-                            <img src="./public/images/icons8-wish_list.svg" alt="Lists" width="20px">
-                            <span>Lists</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#Orders">
-                            <img src="./public/images/icons8-purchase_order.svg" alt="Orders" width="20px">
-                            <span>Orders</span>
-                        </a>
-                    </li>
-                </ul>
-    
-                <a href="#" id="signUpLoginButton"><span>Sign up / Login</span></a>
-            </div>
-
+        <?php 
+        	require("./includes/nav.php");
+            require("./includes/config.php");
+            require("./models/api.php");
+            $all_books = $book -> get_all();
+            $all_authors = $book -> get_authors();
+            ?>
+           
 
 
 
         <div class="BookD">
             <div class="BookDit">Book Details</div>
          
-        
+            <?php
+        $conn = new mysqli("localhost", "root", "", "nvlst", 8889);
+
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT * FROM books WHERE ID= {$_GET['id']};";
+        if ($result = mysqli_query($conn, $sql))
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_array($result)){
+            
+            ?>
          <div class="grp">
              <div class="rate">
             <a href="#"><img class="star" src="./public/images/icons8-star.svg"></a>
@@ -82,8 +55,8 @@
             <a href="#"><img class="star" src="./public/images/icons8-star.svg"></a>
             <a class="ratingAvg">5.0</a>
         </div>
-             <div class="BookName">LONG BRIGHT RIVER</div>
-             <div class="price">SR21.24</div>
+             <div class="BookName"><?php echo $row["Title"]; ?></div>
+             <div class="price"><?php echo $row["Price"]; ?> SAR</div>
 
 
             <div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra duis dignissim semper nunc morbi amet, nisi. Sed consectetur massa tristique aliquam risus accumsan. Netus non semper vulputate ultricies nullam augue dapibus. Nulla bibendum dictum aenean eget orci, nec amet, odio.</div>
@@ -92,11 +65,12 @@
 
          <div class="buttons">
          <button class="RentButton">RENT THIS BOOK</button>
-         <button class="AddCart">ADD TO CART</button>
+         <a type="submit" <?php echo "href='addToCart.php?id=".$row['ID']."' "?> class="AddCart">ADD TO CART</a>
          </div>
              <div class="pic">
-                <a href="#"><img  src="./public/images/49803373.png"></a>
+                <img  src="./public/images/covers/<?php echo $row["ISBN"]; ?>.jpg " style="width: 230px; height: 348px;">
 
+                    
              </div>
              
               <div class="grpD">
@@ -113,17 +87,17 @@
                 </div>
                 <div class="lang">
                    <a class="texation"> LANGUAGE</a>
-                   <a class="text2">English</a>
+                   <a class="text2"><?php echo $row["Language"]; ?></a>
 
                 </div>
                 <div class="provider">
                    <a class="texation">PROVIDER</a>
-                   <a class="text2">The Novelist</a>
+                   <a class="text2"><?php echo $row["Provider"]; ?></a>
 
                 </div>
                 <div class="release">
                     <a class="texation"> RELEASE DATE</a>
-                    <a class="text2">2018</a>
+                    <a class="text2"><?php echo $row["Release_Date"]; ?></a>
 
                 </div>
 
@@ -148,7 +122,7 @@
                     
                         <ul>
                    <li><a class="texation">Brooklyn, New York</a></li>
-                    <li><a class="text2">Jerome Miles</a></li>
+                    <li><a class="text2"><?php echo $row["Author_Name"]; ?></a></li>
                 </ul>
                 
                 </div>
@@ -169,6 +143,9 @@
 
 
              </div>
+              <?php  }
+            }
+            ?>
              
              <div class="similar">
                  <div class="title">Similar Books</div>

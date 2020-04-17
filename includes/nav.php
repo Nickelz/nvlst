@@ -9,7 +9,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="./discover.html">
+				<a href="./discover.php">
 					<img src="./public/images/icons8-compass.svg" alt="Discover" width="20px">
 					<span>Discover</span>
 				</a>
@@ -60,7 +60,7 @@
 			<a href="./logout.php">Logout</a>
 		</div>
 		<?php else: ?>
-			<a href="#" id="signUpLoginButton"><span>Login</span></a>
+			<a href="./login.php" id="signUpLoginButton"><span>Login</span></a>
 		<?php endif; ?>
 	</div>
 </div>
