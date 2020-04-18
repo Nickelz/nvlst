@@ -139,7 +139,6 @@ $all_authors = $book -> get_authors();
 						</a>
 						<span><?php echo $book_row["Title"]; ?></span>
 						<span><?php echo $book_row["Author_Name"]; ?></span>
-						
 					</div>
 					<?php
 					endforeach;

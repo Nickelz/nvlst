@@ -34,7 +34,17 @@ class User {
 		return (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true);
 	}
 
-	public function test() {
-		return "This is just a test from the User class!<br>";
+	public function get_all() {
+		$result = $this -> _db -> query("SELECT * FROM `Users`;");
+		if ($result -> num_rows > 0) {
+			while($user = $result -> fetch_assoc()) {
+				$users[] = $user;
+			}
+			return $users;
+		}
+	}
+
+	public function delete($id) {
+		return $this -> _db -> query("DELETE FROM `Users` WHERE `ID`=\"{$id}\";");
 	}
 }

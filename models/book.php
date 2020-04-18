@@ -31,6 +31,22 @@ class Book {
 		}
 	}
 
+	public function add($title, $author, $provider, $genre, $language, $released, $isbn, $no_of_pages, $price) {
+		$sql = "INSERT INTO `Books`
+		(`Title`, `Author_Name`, `Provider`, `Genre`, `Language`, `Release_Date`, `ISBN`, `Number_of_Pages`, `Price`)
+		VALUES
+		(\"{$title}\", \"{$author}\", \"{$provider}\", \"{$genre}\", \"{$language}\", \"{$released}\", \"{$isbn}\", \"{$no_of_pages}\", \"{$price}\");";
+		if($this -> _db -> query($sql) === TRUE) {
+			echo "New record created successfully!";
+		} else {
+			echo $sql . "<hr>" . $this -> _db -> error;
+		}
+	}
+
+	public function delete($isbn) {
+		return $this -> _db -> query("DELETE FROM `Books` WHERE `ISBN`=\"{$isbn}\";");
+	}
+
 	private function fetchedRow($row) {
 		return new Book($this -> _db, $row['ID'], $row['ISBN'], $row['Number_of_Pages'], $row['Author_Name'], $row['Provider'], $row['Release_Date'], $row['Language'], $row['Genre'], $row['Price'], $row['Title']);
 	}

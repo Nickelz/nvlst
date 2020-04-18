@@ -65,7 +65,7 @@ center {
 	display: none;
 }
 
-.container .controls .segmentedControls input + label {
+.container .controls .segmentedControls input + a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -79,11 +79,15 @@ center {
 	cursor: pointer;
 }
 
-.container .controls .segmentedControls input:checked + label {
+.container .controls .segmentedControls input:checked + a {
 	color: var(--bg-color);
 	background-color: var(--gold-color);
 	font-weight: 700;
 	border-radius: 0.2vw;
+}
+
+.container .controls .segmentedControls a {
+	color: inherit;
 }
 
 /* MARK: Actions */
@@ -94,26 +98,26 @@ center {
 	height: 60%;
 }
 
-.container .controls .actions div {
+.container .controls .actions a {
 	display: flex;
-	flex-direction: row;
+	align-items: center;
 	width: 35%;
 	border-radius: 0.2vw;
 	background-color: var(--bg-color);
 }
 
-.container .controls .actions div:first-of-type {
+.container .controls .actions a:first-of-type {
 	margin-left: auto;
 	margin-right: 5%;
 }
 
-.container .controls .actions div img {
+.container .controls .actions a img {
 	width: 10%;
 	margin-left: 5%;
 	margin-right: 5%;
 }
 
-.container .controls .actions div button {
+.container .controls .actions a span {
 	text-align: left;
 	text-transform: uppercase;
 
@@ -124,11 +128,11 @@ center {
 	width: 90%;
 }
 
-.container .controls .actions div:first-of-type button {
+.container .controls .actions a:first-of-type span {
 	color: var(--gold-color);
 }
 
-.container .controls .actions div:last-of-type button {
+.container .controls .actions a:last-of-type span {
 	color: var(--green-color);
 }
 
@@ -137,13 +141,13 @@ center {
 	margin-top: 1%;
 	margin-bottom: 1%;
 }
-.container .table .head {
+.container .table .head, .users-head {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.container .table .head > * {
+.container .table .head > *, .users-head > *{
 	color: var(--dark-white);
 	font-size: calc(0.1rem + 0.4vw);
 	font-weight: 600;
@@ -154,18 +158,20 @@ center {
 	border: none;
 }
 
-.container .table .head *:nth-child(1), .container .table .row *:nth-child(1) { width: 4.5%; }
-.container .table .head *:nth-child(2), .container .table .row *:nth-child(2) { width: 3.8%; }
-.container .table .head *:nth-child(3), .container .table .row *:nth-child(3) { width: 3.9%; }
-.container .table .head *:nth-child(4), .container .table .row *:nth-child(4) { width: 10.5%; }
-.container .table .head *:nth-child(5), .container .table .row *:nth-child(5) { width: 10.21%; }
-.container .table .head *:nth-child(6), .container .table .row *:nth-child(6) { width: 9.85%; }
-.container .table .head *:nth-child(7), .container .table .row *:nth-child(7) { width: 7.39%; }
-.container .table .head *:nth-child(8), .container .table .row *:nth-child(8) { width: 7.68%; }
-.container .table .head *:nth-child(9), .container .table .row *:nth-child(9){ width: 7.82%; }
-.container .table .head *:nth-child(10), .container .table .head *:nth-child(11), .container .table .row *:nth-child(10), .container .table .row *:nth-child(11) { width: 11.37%; }
-.container .table .head *:nth-child(12), .container .table .row *:nth-child(12) { width: 5.86%; }
-.container .table .head *:nth-child(13), .container .table .row *:nth-child(13) { width: 5.65%; }
+.container .table .head *:nth-child(1), .container .table .books-row *:nth-child(1), .container .table .users-head *:first-child, .container .table .users-row *:nth-child(1) { width: 4.5%; }
+.container .table .head *:nth-child(2), .container .table .books-row *:nth-child(2), .container .table .users-head *:nth-child(2), .container .table .users-row *:nth-child(2) { width: 2%; }
+.container .table .head *:nth-child(3), .container .table .books-row *:nth-child(3) { width: 3%; }
+.container .table .head *:nth-child(4), .container .table .books-row *:nth-child(4) { width: 10.5%; }
+.container .table .head *:nth-child(5), .container .table .books-row *:nth-child(5) { width: 10.21%; }
+.container .table .head *:nth-child(6), .container .table .books-row *:nth-child(6) { width: 9.85%; }
+.container .table .head *:nth-child(7), .container .table .books-row *:nth-child(7) { width: 7.39%; }
+.container .table .head *:nth-child(8), .container .table .books-row *:nth-child(8) { width: 7.68%; }
+.container .table .head *:nth-child(9), .container .table .books-row *:nth-child(9){ width: 7.82%; }
+.container .table .head *:nth-child(10), .container .table .head *:nth-child(11), .container .table .books-row *:nth-child(10), .container .table .books-row *:nth-child(11) { width: 11.37%; }
+.container .table .head *:nth-child(12), .container .table .books-row *:nth-child(12) { width: 5.86%; }
+.container .table .head *:nth-child(13), .container .table .books-row *:nth-child(13), .container .table .users-head *:last-child, .container .table .users-row *:last-child { width: 10%; }
+.container .table .users-head *, .container .table .users-row * { width: 21.86%; }
+.container .table .head *:nth-child(4), .container .table .books-row *:nth-child(4) { margin-left: 1.25%;}
 
 .container .table hr {
 	border: 0.5px solid var(--bg-color);
@@ -179,7 +185,7 @@ center {
 	display: none;
 }
 
-.container .table .row {
+.container .table .books-row, .users-row {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -190,7 +196,75 @@ center {
 	list-style: none;
 }
 
-.container .table .row .actionButtons a img {
+.container .table .books-row .actionButtons a img, .users-row .actionButtons a img {
 	width: 18%;
-	margin-right: 0.5vw;
+	margin-right: 5%;
+}
+
+.popup {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 25%;
+	height: 55%;
+
+	color: var(--bg-color);
+	background-color: var(--panel-bg-color);
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+
+	border: 1px solid var(--gold-color);
+	border-radius: 10px;
+}
+
+.popup h4 {
+	color: white;
+	text-align: center;
+	margin-top: 1.5vh;
+	text-transform: uppercase;
+	height: 5%;
+}
+
+.popup .fields {
+	display: flex;
+	flex-direction: column;
+	margin-left: 1.5vw;
+	margin-right: 1.5vw;
+	height: 100%;
+}
+
+.popup .fields input {
+	color: white;
+	background-color: var(--bg-color);
+	border: 1px solid black;
+	border-radius: 3px;
+	padding-left: 2%;
+	flex: 1;
+
+	font-size: calc(0.2rem + 0.4vw);
+}
+
+.popup .fields > * {
+	margin-bottom: 1vh;
+}
+
+.popup input[type="submit"] {
+	margin: 1% auto;
+	margin-bottom: 1.5vh;
+	width: 25%;
+	height: 5%;
+	background-color: var(--gold-color);
+	border-radius: 5px;
+	border: none;
+	text-transform: uppercase;
+	font-size: calc(0.4rem + 0.4vw);
+	font-weight: 700;
+}
+
+.popup .cover div {
+	background-color: var(--bg-color);
+	width: 50%;
 }
