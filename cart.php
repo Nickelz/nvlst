@@ -16,8 +16,8 @@
 <body>
 	<div class="container">
 	<?php 
-	require("./includes/nav.php");
 	require("./includes/config.php");
+	require("./includes/nav.php");
 	require("./models/api.php");
 	$totalPrice= 0;
 

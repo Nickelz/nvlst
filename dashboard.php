@@ -67,9 +67,11 @@ if(!isset($_REQUEST['sc'])) header("Location: dashboard.php?sc=books");
 	<script src="./public/scripts/jquery-3.5.0.min.js"></script>
 </head>
 <body>
+	<a href="discover.php">
 	<center>
-		<img src="./public/images/Logo.svg" alt="The Novelist">
-	</center>
+			<img src="./public/images/Logo.svg" alt="The Novelist">
+		</center>
+	</a>
 	<div class="container">
 		<div class="controls">
 			<form class="search" action="dashboard.php" method="GET">
