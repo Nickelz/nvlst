@@ -4,7 +4,7 @@
 		<img src="./public/images/Logo.svg" alt="Logo" class="logo">
 		<ul>
 			<li id="<?php echo ($activePage == 'search') ? 'active' : '' ?>">
-				<a href="./search.html">
+				<a href="./search.php">
 					<img src="./public/images/icons8-search.svg" alt="Search" width="20px">
 					<span>Search</span>
 				</a>
