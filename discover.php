@@ -2,7 +2,8 @@
 require("./includes/config.php");
 $all_books = $book -> get_all();
 $all_authors = $book -> get_authors();
-$recentlist=$_COOKIE['recent'];
+if(isset($_COOKIE['recent'])){
+$recentlist=$_COOKIE['recent']; }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,12 +28,13 @@ $recentlist=$_COOKIE['recent'];
 			<h1>Discover</h1>
 			<div class="foryou">
 				<h3>Recently Viewed</h3>
-				<div class="books">
-				<?php 
+				<div class="books">	
+				<?php 		
+							if(isset($_COOKIE['recent'])){
 							$recentResult = $conn -> query("SELECT * FROM `Books` WHERE `ID` IN ($recentlist)") or die($conn -> error);
 			
 							while($recentRow = $recentResult -> fetch_assoc())  { ?>
-					<div class="book">
+							<div class="book">
 
 						
 							<div class="cover"></div>
@@ -46,14 +48,14 @@ $recentlist=$_COOKIE['recent'];
 								<?php for ($i=0;$i<$recentRow["rating"];$i++) { ?>	
 								<img src="./public/images/icons8-star.svg" alt="Star" width="6%">
 								<?php } ?>
-								<!-- <span>4.1</span> -->
+								>
 							</div>
 							<span>because you rented <strong>eleanor & park</strong> by <strong>Rainbow Rowell</strong></span>
 						</div>
 					
 					</div>
 					<?php
-							}
+							}}
 							?>
 				</div>
 			</div>

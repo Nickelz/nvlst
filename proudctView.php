@@ -55,7 +55,7 @@
             <div class="BookDit">Book Details</div>
          
             <?php
-        $conn = new mysqli("localhost", "root", "", "nvlst", 8889);
+        // $conn = new mysqli("localhost", "root", "", "nvlst", 8889);
 
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -91,13 +91,10 @@
          </div>
 
          <div class="buttons">
-         <!-- <?php if($_GET['w']==1) {?> -->
-         <button class="AddCart">Add to wishlist</button>
-         <!-- <?php }
-                else { ?>
-                   <button class="AddCart">Remove from wishlist</button>
-                    <?php
-                } ?> -->
+        
+         
+         <a type="submit" <?php echo "href='addToCart.php?id=".$row['ID']."' "?> class="AddCart">ADD TO WISHLIST</a>
+
                     
          <a type="submit" <?php echo "href='addToCart.php?id=".$row['ID']."' "?> class="RentButton">ADD TO CART</a>
          </div>
@@ -183,13 +180,14 @@
              
              <div class="similar">
                  <div class="title">Similar Books</div>
-
+                 <span> Based on <?php echo $genre; ?></span>
 
               <ul>
                   <?php
                   
                   
                     $simResult = $conn -> query("SELECT * FROM `Books` WHERE `ID` !='$not' AND`Genre`='$genre'") or die($conn -> error);
+    
                     $i=0;
  				    while($simRow = $simResult -> fetch_assoc())  { 
                         if($i==6){ 
