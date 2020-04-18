@@ -157,3 +157,27 @@ h1 {
 	font-weight: 500;
 	margin-bottom: 1.5vh;
 }
+.button{
+	padding: 7px 33px;
+	/*
+	grid-row: 6;
+			grid-column: 2;
+	*/
+	margin-right: 1em;
+	
+	background: #F5D8B9;
+	border-radius: 8px;
+	
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 14px;
+	line-height: 21px;
+	/* identical to box height */
+	
+	align-items: center;
+	text-align: center;
+	
+	color: #000000;
+	
+}

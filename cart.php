@@ -65,16 +65,19 @@
 						<li id="bookAuthor"><?php echo $cartRow["Author_Name"] ?></li>
 						<li id="bookPrice"><?php echo $cartRow["Price"]?> SR </li>
 					</ul>
-					<?php ;
-				}
-			}
-				else echo "Cart Empty";
-				
-
-				?>
+					
 			
 					
 				</div>
+				<?php ;
+				}
+			}
+				else{ //echo "Cart Empty";
+		
+				?>
+
+				<div><img src="./public/images/empty.png" width=550 height=400></div>
+				<?php  }  ?>
 		</div>
 		<div class="checkout">
 			<h1>Checkout</h1>
@@ -135,7 +138,7 @@
 				</ul>
 				<ul>
 				<?php if(isset($whereIn)){ ?>
-				<li><a <?php echo "href=./checkout.php?order=$whereIn " ?>> Place Order</a>
+				<li><a <?php echo "href=./checkout.php?order=$whereIn " ?> class="button"> Place Order</a>
 				<?php } ?>
 				</ul>
 			</div>
