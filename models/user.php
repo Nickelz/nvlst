@@ -20,9 +20,13 @@ class User {
 		return false;
 	}
 
-	private function get_hash($email) {
-		$result = $this -> _db -> query("SELECT * FROM `Users` WHERE `Email`=\"" . $email . "\";");
-		return $result -> fetch_assoc();
+	public function search($keyword) {
+		$sql = "SELECT * FROM `Users` WHERE `ID`=\"{$keyword}\" OR `First_Name` LIKE \"%{$keyword}%\" OR `Last_Name` LIKE \"%{$keyword}%\" OR `Username` LIKE \"%{$keyword}%\" OR `Email` LIKE \"%{$keyword}%\"";
+		$result = $this -> _db -> query($sql);
+		if ($result -> num_rows > 0)
+			while ($user = $result -> fetch_assoc())
+				$users[] = $user;
+		return $users;
 	}
 
 	public function logout() {
@@ -46,5 +50,10 @@ class User {
 
 	public function delete($id) {
 		return $this -> _db -> query("DELETE FROM `Users` WHERE `ID`=\"{$id}\";");
+	}
+
+	private function get_hash($email) {
+		$result = $this -> _db -> query("SELECT * FROM `Users` WHERE `Email`=\"" . $email . "\";");
+		return $result -> fetch_assoc();
 	}
 }

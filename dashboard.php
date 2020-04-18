@@ -12,7 +12,7 @@ if(isset($_POST["submit"])) {
 	$file_ext = strtolower(end(explode('.',$_FILES['Cover']['name'])));
 	$extensions = array("jpg");
 
-	if(in_array($file_ext,$extensions) === false) $errors[] = "extension not allowed, please choose a JPG file.";
+	if(in_array($file_ext, $extensions) === false) $errors[] = "extension not allowed, please choose a JPG file.";
 
 	if(empty($errors) == true) {
 		$target_directory = "./public/images/covers/";
@@ -25,30 +25,31 @@ if(isset($_POST["submit"])) {
 }
 
 if(isset($_REQUEST["delete"])) {
-	echo "FAK<br>";
 	if (strlen($_REQUEST["delete"]) > 5) {
 		$book -> delete($_REQUEST["delete"]);
 		$file = "./public/images/covers/{$_REQUEST['delete']}.jpg";
 		if (file_exists($file)) unlink($file);
 		header("Location: dashboard.php?sc=books");
-	}
-	else {
+	} else {
 		$user -> delete($_REQUEST["delete"]);
 		header("Location: dashboard.php?sc=users");
 	}
 }
 
-switch ($_REQUEST['sc']) {
-	default:
-	case 'books':
-		$all_books = $book -> get_all();
-		break;
-	case 'users':
-		$all_users = $user -> get_all();
-		break;
-	case 'providers':
-		break;
+if($_REQUEST['sc'] == "users")
+	$all_users = $user -> get_all();
+else
+	$all_books = $book -> get_all();
+
+if(isset($_REQUEST["s"])) {
+	if ($_REQUEST["sc"] == "users") {
+		$all_users = $user -> search($_REQUEST["s"]);
+	} else {
+		$all_books = $book -> search($_REQUEST["s"]);
+	}
 }
+
+if(!isset($_REQUEST['sc'])) header("Location: dashboard.php?sc=books");
 ?>
 
 <!DOCTYPE html>
@@ -71,10 +72,11 @@ switch ($_REQUEST['sc']) {
 	</center>
 	<div class="container">
 		<div class="controls">
-			<div class="search">
+			<form class="search" action="dashboard.php" method="GET">
 				<img src="./public/images/icons8-search.svg" alt="Search">
-				<input type="search" name="search" placeholder="Search for Users, Books or Providers  ..">
-			</div>
+				<input type="search" name="s" id="searchField" placeholder="Search for Users or Books  ..">
+				<input type="hidden" name="sc" value="<?php echo $_REQUEST['sc']; ?>">
+			</form>
 			<div class="segmentedControls">
 				<input type="radio" name="segmentedControl" id="Users" <?php echo $_REQUEST['sc'] == 'users' ? 'checked' : '' ?>>
 				<a href="?sc=users">Users</a>
