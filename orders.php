@@ -9,7 +9,8 @@
 
 	<link rel="stylesheet" href="./public/styles/main.css" type="text/css">
 	<link rel="stylesheet" href="./public/styles/nav.css" type="text/css">
-	<link rel="stylesheet" href="./public/styles/orders.css" type="text/css">
+  <link rel="stylesheet" href="./public/styles/orders.css" type="text/css">
+
 </head>
 
 <body>
@@ -17,20 +18,53 @@
 	<?php 
 	require("./includes/nav.php");
 	require("./includes/config.php");
-	require("./models/api.php");
-	$totalPrice= 0;
+    require("./models/api.php");
+    $all_books = $book -> get_all();
+            $all_authors = $book -> get_authors();
 	 ?>
 		
 	
 		
 <div class="order">
-    <h2>Account</h2>
-<div class="orderInfo">
-    <div class="top"><h4>Order ID NSAC10024761747</h4><div class="state"><img src="./public/images/icons8-error 1.svg"><span>PROCESSING</span></div><h4>Feb 26, 2020</h4></div>
+<?php
+$conn = new mysqli("localhost", "root", "", "nvlst", 3306);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+        
+      //  while($rec = $sql -> fetch_assoc())  {
+            
+            
+          //  $bookRow = $sq -> fetch_assoc();
+
+
+        //  while($recentRow = $recentResult -> fetch_assoc())  { 
+
+
+
+        //$sql = "SELECT * FROM books WHERE ID= {$_GET['id']};";
+        //if ($result = mysqli_query($conn, $sql))
+          //  if (mysqli_num_rows($result) > 0) {
+            //    while ($row = mysqli_fetch_array($result)){
+              //      $genre=$row["Genre"];
+                //    $not=$row["ID"];
+            ?>
+
+
+
+    <h2>orders</h2>
+<?php
+        $sq = $conn -> query("SELECT * FROM `orderhistory` WHERE `UserID`= ".$_SESSION['UserID']);
+        while ($ro = $sq -> fetch_assoc()){
+            
+
+?>
+
+ <div class="orderInfo">
+    <div class="top"><h4> ID :NSAC100247617 - <?php echo $ro["OrderID"]; ?></h4><h4 class="right"><?php echo $ro["Date"]; ?></h4></div>
     <hr>
     
-        
-        
     
 
     <div class="dit">
@@ -39,26 +73,35 @@
         <span>price</span>
         <span>TRANSACTION TYPE</span>
     </div>
+
+    <?php
+                $x=$ro['Books'];
+                $sqs = $conn -> query("SELECT * FROM `books` WHERE `ID` IN ($x)");
+   while ($bookRow = $sqs -> fetch_assoc()){
+
+        ?>
+
         <div class="dit">
-       <div class="bookNAme"><img src="./public/images/covers/9765456322123.jpg" alt="COVER" width="75" height="115"/><div><span>Ninth House</span><span class="a">Leigh Bardugo</span></div>
+       <div class="bookNAme"><img src="./public/images/covers/<?php echo $bookRow["ISBN"]; ?>.jpg" alt="COVER" width="75" height="115"/><div><span><?php echo $bookRow["Title"]; ?></span><span class="a"><?php echo $bookRow["Author_Name"]; ?></span></div>
        </div> 
-        <h5>The Novelist</h5>
-        <h5>SR 42.34</h5>
+        <h5><?php echo $bookRow["Provider"];?></h5>
+        <h5>SAR<?php echo $bookRow["Price"];?></h5>
         <div class="PURCHASED">PURCHASED</div>
-
-    </div>
+        </div>
+        <?php
+   }
+        ?>
+ 
     
-        <div class="dit">
-       <div class="bookNAme"><img src="./public/images/covers/9765456322123.jpg" alt="COVER" width="75" height="115"/><div><span>Ninth House</span><span class="a">Leigh Bardugo</span></div></div> 
-        <div><h5>The Novelist</h5></div>
-        <div><h5>SR 42.34</h5></div>
-        <div class="rent">rent</div>
 
-    </div>
 
-    
+
 </div>
-
+<?php
+   }
+       
+        ?>
+</div>
 </div>
 </body>
 
