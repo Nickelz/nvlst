@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="./public/styles/main.css" type="text/css">
 	<link rel="stylesheet" href="./public/styles/nav.css" type="text/css">
 	<link rel="stylesheet" href="./public/styles/cart.css" type="text/css">
+	<link rel="shortcut icon" href="./public/images/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -19,21 +20,24 @@
 	require("./includes/config.php");
 	require("./models/api.php");
 	$totalPrice= 0;
+
+	if(!isset($_SESSION['FullName']))
+		header('Location: login.php');
+	
 	 ?>
 		
 	
 		<div class="myCart">
 				<h1>My Cart</h1>
-				<span>(8 Items)</span>
 				<div class="books">
 			
 
 				<?php
-				$whereIn = implode(',', $_SESSION['Cart']);
 				if(!empty($_SESSION['Cart'])){
-					
+				$whereIn = implode(',', $_SESSION['Cart']);
+
 				 $cartResult = $conn -> query("SELECT * FROM `Books` WHERE `ID` IN ($whereIn)") or die($conn -> error);
-				 echo $whereIn;
+			
  				while($cartRow = $cartResult -> fetch_assoc())  { 
 					 $totalPrice += $cartRow["Price"];
 					 ?>
@@ -130,7 +134,9 @@
 					
 				</ul>
 				<ul>
+				<?php if(isset($whereIn)){ ?>
 				<li><a <?php echo "href=./checkout.php?order=$whereIn " ?>> Place Order</a>
+				<?php } ?>
 				</ul>
 			</div>
 		</div>

@@ -35,8 +35,8 @@
 					<span>Cart</span>
 				</a>
 			</li>
-			<li id="<?php echo ($activePage == 'lists') ? 'active' : '' ?>">
-				<a href="./lists.html">
+			<li id="<?php echo ($activePage == 'wishlist') ? 'active' : '' ?>">
+				<a href="./wishlist.php">
 					<img src="./public/images/icons8-wish_list.svg" alt="Lists" width="20px">
 					<span>Lists</span>
 				</a>
