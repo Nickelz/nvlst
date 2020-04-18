@@ -1,14 +1,11 @@
-$(".popup").hide();
-$(document).ready(function () {
-	// $(".users-row").each(function (index, element) {
-	// 	users[index] = $(element).map(() => {
-	// 		// console.log($(this).text())
-	// 		return $(this).text().replace(/^\s+|\s+$/g,'');
-	// 	})
-	// })
+$("#popup").css("display", "none")
 
+$(document).ready(function () {
 	$(".actions > a").last().click(function () {
-		$(".popup").fadeToggle("fast")
-		console.log("HOLA");
+		if ($("#popup").css("display") == "flex") {
+			$("#popup").css("display", "none")
+		} else {
+			$("#popup").css("display", "flex")
+		}
 	})
 })

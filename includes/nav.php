@@ -64,4 +64,11 @@
 			<a href="./login.php" id="signUpLoginButton"><span>Login</span></a>
 		<?php endif; ?>
 	</div>
+
+	<?php if($user -> is_admin($_SESSION['UserID']) === TRUE): ?>
+		<a id="dashboard" href="dashboard.php">
+			<img src="./public/images/icons8-dashboard.png" alt="Dashboard">
+			<span>Admin Dashboard</span>
+		</a>
+	<?php endif; ?>
 </div>

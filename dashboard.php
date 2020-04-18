@@ -74,7 +74,7 @@ if(!isset($_REQUEST['sc'])) header("Location: dashboard.php?sc=books");
 		<div class="controls">
 			<form class="search" action="dashboard.php" method="GET">
 				<img src="./public/images/icons8-search.svg" alt="Search">
-				<input type="search" name="s" id="searchField" placeholder="Search for Users or Books  ..">
+				<input type="search" name="s" id="searchField" placeholder="Search for Users or Books  .." value="<?php echo isset($_REQUEST["s"]) ? $_REQUEST["s"] : '' ?>">
 				<input type="hidden" name="sc" value="<?php echo $_REQUEST['sc']; ?>">
 			</form>
 			<div class="segmentedControls">
@@ -172,7 +172,7 @@ if(!isset($_REQUEST['sc'])) header("Location: dashboard.php?sc=books");
 		</div>
 	</div>
 
-	<form class="popup" method="POST" action="" enctype="multipart/form-data">
+	<form id="popup" class="popup" method="POST" action="" enctype="multipart/form-data">
 		<h4>Add new book</h4>
 		<div class="fields">
 			<input type="text" name="Title" placeholder="Title" required>

@@ -29,6 +29,12 @@ class User {
 		return $users;
 	}
 
+	public function is_admin($id) {
+		$sql = "SELECT * FROM `Admins` WHERE `UserID`=\"{$id}\";";
+		$result = $this -> _db -> query($sql);
+		return $result -> num_rows > 0;
+	}
+
 	public function logout() {
 		$_SESSION = array();
 		session_destroy();
