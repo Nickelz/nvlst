@@ -7,7 +7,7 @@ class Book {
 	}
 
 	public function search($keyword) {
-		$sql = "SELECT * FROM `Books` WHERE `ID`=\"{$keyword}\" OR `Title` LIKE \"%{$keyword}%\" OR `Author_Name` LIKE \"%{$keyword}%\" OR `Genre` LIKE \"%{$keyword}%\" OR `Language` LIKE \"%{$keyword}%\" OR `Release_Date` LIKE \"%{$keyword}%\" OR `Price` LIKE \"%{$keyword}%\" OR `Provider` LIKE \"%{$keyword}%\" OR `ISBN` LIKE \"%{$keyword}%\" OR `Number_of_Pages` LIKE \"%{$keyword}%\" ";
+		$sql = "SELECT * FROM `Books` WHERE `ID`=\"{$keyword}\" OR `Title` LIKE \"%{$keyword}%\" OR `Author_Name` LIKE \"%{$keyword}%\" OR `Genre` LIKE \"%{$keyword}%\" OR `Language` LIKE \"%{$keyword}%\" OR `Release_Date` LIKE \"%{$keyword}%\" OR `Price` LIKE \"%{$keyword}%\" OR `Provider` LIKE \"%{$keyword}%\" OR `ISBN` LIKE \"%{$keyword}%\" OR `Pages` LIKE \"%{$keyword}%\" ";
 		$result = $this -> _db -> query($sql);
 		if ($result -> num_rows > 0)
 			while ($user = $result -> fetch_assoc())

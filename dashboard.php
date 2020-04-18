@@ -125,7 +125,7 @@ if(!isset($_REQUEST['sc'])) header("Location: dashboard.php?sc=books");
 						<span><?php echo $book_row['Language']; ?></span>
 						<span><?php echo $book_row['Release_Date']; ?></span>
 						<span><?php echo $book_row['ISBN']; ?></span>
-						<span><?php echo $book_row['Number_of_Pages']; ?></span>
+						<span><?php echo $book_row['Pages']; ?></span>
 						<span><?php echo $book_row['Price']; ?> SR</span>
 						<div class="actionButtons">
 							<a href="#">
