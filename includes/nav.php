@@ -4,7 +4,7 @@
 		<img src="./public/images/Logo.svg" alt="Logo" class="logo">
 		<ul>
 			<li id="<?php echo ($activePage == 'search') ? 'active' : '' ?>">
-				<a href="./search.html">
+				<a href="./search.php">
 					<img src="./public/images/icons8-search.svg" alt="Search" width="20px">
 					<span>Search</span>
 				</a>
@@ -35,8 +35,8 @@
 					<span>Cart</span>
 				</a>
 			</li>
-			<li id="<?php echo ($activePage == 'lists') ? 'active' : '' ?>">
-				<a href="./lists.html">
+			<li id="<?php echo ($activePage == 'wishlist') ? 'active' : '' ?>">
+				<a href="./wishlist.php">
 					<img src="./public/images/icons8-wish_list.svg" alt="Lists" width="20px">
 					<span>Lists</span>
 				</a>
@@ -64,4 +64,11 @@
 			<a href="./login.php" id="signUpLoginButton"><span>Login</span></a>
 		<?php endif; ?>
 	</div>
+
+	<?php if($user -> is_admin($_SESSION['UserID']) === TRUE): ?>
+		<a id="dashboard" href="dashboard.php">
+			<img src="./public/images/icons8-dashboard.png" alt="Dashboard">
+			<span>Admin Dashboard</span>
+		</a>
+	<?php endif; ?>
 </div>

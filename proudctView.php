@@ -1,6 +1,28 @@
+<?php
+
+
+    if(!empty($_COOKIE['recent'])) 
+        {    
+
+            $recentViewArray = array($_COOKIE['recent']);
+            array_push($recentViewArray,$_GET['id']);
+            $recentView= implode(',' , $recentViewArray);
+            setcookie('recent', $recentView , time() + (86400*30), "/");
+            }
+     else 
+        {
+            $recentViewArray = array();
+            array_push($recentViewArray,$_GET['id']);
+            $recentView= implode(',' , $recentViewArray);
+            setcookie('recent', $recentView , time() + (86400*30), "/");
+            }
+        
+
+?>
+
 <html>
     <head>
-   <title>The Novelist</title>     
+   <title>The Novelist></title>     
    <style>
 
        
@@ -21,7 +43,7 @@
         <?php 
         	require("./includes/nav.php");
             require("./includes/config.php");
-            require("./models/api.php");
+            // require("./models/api.php");
             $all_books = $book -> get_all();
             $all_authors = $book -> get_authors();
             ?>
@@ -48,23 +70,35 @@
             ?>
          <div class="grp">
              <div class="rate">
-            <a href="#"><img class="star" src="./public/images/icons8-star.svg"></a>
-            <a href="#"> <img class="star" src="./public/images/icons8-star.svg"></a>
-            <a href="#"> <img class="star" src="./public/images/icons8-star.svg"></a>
-            <a href="#"><img class="star" src="./public/images/icons8-star.svg"></a>
-            <a href="#"><img class="star" src="./public/images/icons8-star.svg"></a>
-            <a class="ratingAvg">5.0</a>
+                 <?php
+                 $i=0;
+                 while($i<$row["rating"]) {
+                     
+                 ?>
+                 <a href=""><img class="star" src="./public/images/icons8-star.svg"></a>
+                
+                 <?php
+                $i=$i+1;
+                } ?>
+          
         </div>
              <div class="BookName"><?php echo $row["Title"]; ?></div>
              <div class="price"><?php echo $row["Price"]; ?> SAR</div>
 
 
-            <div class="des">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra duis dignissim semper nunc morbi amet, nisi. Sed consectetur massa tristique aliquam risus accumsan. Netus non semper vulputate ultricies nullam augue dapibus. Nulla bibendum dictum aenean eget orci, nec amet, odio.</div>
+            <div class="des"><?php echo $row["des"]; ?></div>
 
          </div>
 
          <div class="buttons">
+         <!-- <?php if($_GET['w']==1) {?> -->
          <button class="AddCart">Add to wishlist</button>
+         <!-- <?php }
+                else { ?>
+                   <button class="AddCart">Remove from wishlist</button>
+                    <?php
+                } ?> -->
+                    
          <a type="submit" <?php echo "href='addToCart.php?id=".$row['ID']."' "?> class="RentButton">ADD TO CART</a>
          </div>
              <div class="pic">
@@ -83,7 +117,7 @@
              </div>
                 <div class="pages">
                     <a class="texation">NO. OF PAGES</a>
-                    <a class="text2">15 pages</a>
+                    <a class="text2"><?php echo $row["Pages"] ?> Pages</a>
                 </div>
                 <div class="lang">
                    <a class="texation"> LANGUAGE</a>
@@ -156,8 +190,12 @@
                   
                   
                     $simResult = $conn -> query("SELECT * FROM `Books` WHERE `ID` !='$not' AND`Genre`='$genre'") or die($conn -> error);
-
- 				    while($simRow = $simResult -> fetch_assoc())  { ?>
+                    $i=0;
+ 				    while($simRow = $simResult -> fetch_assoc())  { 
+                        if($i==6){ 
+                        break;}
+                    else
+                        $i++?>
                 <li> <?php echo "<a href=proudctView.php?id=" . $simRow['ID'] . ">"?><img src="./public/images/covers/<?php echo $simRow["ISBN"]; ?>.jpg" width="50px"><div class="uls"><h3 class="similarFont"><?php echo $simRow['Author_Name']?></h3><span><?php echo $simRow['Title']?></span></div><img src="./public/images/icons8-forward 1.svg"></a></li> 
                  <?php
                 }

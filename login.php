@@ -1,14 +1,9 @@
 <?php
 require("./includes/config.php");
 
-// TEMP
-if(isset($error))
-	foreach ($error as $error)
-		echo "<p> " . $error . "</p>";
-
 if ($user -> is_logged_in()) {
 	echo htmlspecialchars($_SESSION['Email'], ENT_QUOTES);
-	header('Location: cart.php');
+	header('Location: discover.php');
 	exit;
 }
 
@@ -47,10 +42,16 @@ if (isset($_POST['submit'])) {
 
 				<input type="submit" name="submit" value="Login">
 			</form>
+			<?php if(isset($error)): ?>
+			<?php foreach($error as $err) ?>
+				<ul>
+					<li><?php echo $err ?></li>
+				</ul>
+			<?php endif; ?>
 			<a class="signUp" href="./signup.php">Sign Up</a>
 			<div class="backToBrowsing">
 				<img src="./public/images/icons8-long_arrow_left.svg" alt="arrow" width="21px">
-				<a href="#">Back to browsing</a>
+				<a href="./discover.php">Back to browsing</a>
 			</div>
 		</div>
 	</div>

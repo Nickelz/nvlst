@@ -62,6 +62,11 @@
 	border-color: var(--gold-color);
 }
 
+#active span {
+	color: white !important;
+	font-weight: 600;
+}
+
 #signUpLoginButton {
 	display: flex;
 
@@ -121,6 +126,35 @@
 
 .userControls a:last-of-type {
 	color:var(--red-color);
+}
+
+#dashboard {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	margin-top: 1vh;
+
+	border-radius: 10px;
+	background-color: var(--panel-bg-color);
+}
+
+#dashboard > * {
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+#dashboard span {
+	text-transform: uppercase;
+	font-size: calc(0.2rem + 0.4vw);
+	font-weight: 600;
+	color: white;
+}
+
+#dashboard img {
+	width: 8%;
+	margin-right: 4%;
 }
 
 @media screen and (max-width: 1200px) {

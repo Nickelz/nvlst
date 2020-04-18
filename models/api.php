@@ -2,7 +2,7 @@
 class GOODREADS {
 
 	// TEMP
-	const API_KEY = "HClOteK7gG6dLJ2XpQPE5Q";
+	const API_KEY = "XX";
 
 	const BASE_URL = "https://www.goodreads.com";
 

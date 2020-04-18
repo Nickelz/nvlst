@@ -3,7 +3,7 @@ require("./includes/config.php");
 
 if ($user -> is_logged_in()) {
 	echo "Already logged in";
-	header('Location: cart.html');
+	header('Location: discover.php');
 	exit;
 }
 
@@ -16,8 +16,9 @@ if(isset($_POST["Username"])) {
 	}
 
 	$hashed_password = password_hash($arr['Password'], PASSWORD_BCRYPT);
-	$activasion = md5(uniqid(rand(), true));
-
+    $activasion = md5(uniqid(rand(), true));
+    
+    
 	$query = "INSERT INTO `Users` (`First_Name`, `Last_Name`, `Username`, `Email`, `Password`)
 	VALUES (
 		\"{$arr['First_Name']}\",
@@ -31,7 +32,7 @@ if(isset($_POST["Username"])) {
 
 	if ($conn -> query($query) === TRUE) {
         $user -> login($arr['Email'], $arr['Password']);
-		header('Location: cart.php?action=registered');
+		header('Location: discover.php?action=registered');
 		exit;
 	} else {
 		echo "Failed to create user: " . $conn -> error;
