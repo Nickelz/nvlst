@@ -33,22 +33,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
         
-      //  while($rec = $sql -> fetch_assoc())  {
-            
-            
-          //  $bookRow = $sq -> fetch_assoc();
-
-
-        //  while($recentRow = $recentResult -> fetch_assoc())  { 
-
-
-
-        //$sql = "SELECT * FROM books WHERE ID= {$_GET['id']};";
-        //if ($result = mysqli_query($conn, $sql))
-          //  if (mysqli_num_rows($result) > 0) {
-            //    while ($row = mysqli_fetch_array($result)){
-              //      $genre=$row["Genre"];
-                //    $not=$row["ID"];
+      
             ?>
 
 
