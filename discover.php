@@ -1,6 +1,5 @@
 <?php
 require("./includes/config.php");
-require("./models/api.php");
 $all_books = $book -> get_all();
 $all_authors = $book -> get_authors();
 ?>
