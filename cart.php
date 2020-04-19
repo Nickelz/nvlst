@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+	
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>The Novelist</title>
@@ -16,8 +17,8 @@
 <body>
 	<div class="container">
 	<?php 
-	require("./includes/nav.php");
 	require("./includes/config.php");
+	require("./includes/nav.php");
 	require("./models/api.php");
 	$totalPrice= 0;
 
@@ -49,7 +50,7 @@
 					<ul id="book">
 
 						
-						<?php echo "<a href=deleteFromCart.php?id=" . $cartRow['ID'] . ">" ?>
+						<?php echo "<a href=cartOP.php?id=" . $cartRow['ID'] ."&op=del>" ?>
 						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
 						</a>
 
@@ -65,16 +66,19 @@
 						<li id="bookAuthor"><?php echo $cartRow["Author_Name"] ?></li>
 						<li id="bookPrice"><?php echo $cartRow["Price"]?> SR </li>
 					</ul>
-					<?php ;
-				}
-			}
-				else echo "Cart Empty";
-				
-
-				?>
+					
 			
 					
 				</div>
+				<?php ;
+				}
+			}
+				else{ //echo "Cart Empty";
+		
+				?>
+
+				<div><img src="./public/images/empty.png" width=550 height=400></div>
+				<?php  }  ?>
 		</div>
 		<div class="checkout">
 			<h1>Checkout</h1>
@@ -135,7 +139,7 @@
 				</ul>
 				<ul>
 				<?php if(isset($whereIn)){ ?>
-				<li><a <?php echo "href=./checkout.php?order=$whereIn " ?>> Place Order</a>
+				<li><a <?php echo "href=./cartOP.php?op=checkout&order=$whereIn " ?> class="button"> Place Order</a>
 				<?php } ?>
 				</ul>
 			</div>

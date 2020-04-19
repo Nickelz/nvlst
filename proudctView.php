@@ -1,28 +1,38 @@
 <?php
 
+        require("./includes/config.php");
 
-    if(!empty($_COOKIE['recent'])) 
-        {    
+        if(!empty($_COOKIE['recent'])) 
+            {    
 
-            $recentViewArray = array($_COOKIE['recent']);
-            array_push($recentViewArray,$_GET['id']);
-            $recentView= implode(',' , $recentViewArray);
-            setcookie('recent', $recentView , time() + (86400*30), "/");
-            }
-     else 
-        {
-            $recentViewArray = array();
-            array_push($recentViewArray,$_GET['id']);
-            $recentView= implode(',' , $recentViewArray);
-            setcookie('recent', $recentView , time() + (86400*30), "/");
-            }
+                $recentViewArray = array($_COOKIE['recent']);
+                array_push($recentViewArray,$_GET['id']);
+                $recentView= implode(',' , $recentViewArray);
+                setcookie('recent', $recentView , time() + (86400*30), "/");
+                }
+        else 
+            {
+                $recentViewArray = array();
+                array_push($recentViewArray,$_GET['id']);
+                $recentView= implode(',' , $recentViewArray);
+                setcookie('recent', $recentView , time() + (86400*30), "/");
+                }
         
+        
+        $check = mysqli_query($conn,"SELECT * from Wishlist where BookID='$_GET[id]'");
+
+        if(mysqli_num_rows($check) > 0)
+        {
+                $wishStatus='del';
+        }
+        else    
+                $wishStatus='add';
 
 ?>
 
 <html>
     <head>
-   <title>The Novelist></title>     
+   <title>The Novelist</title>     
    <style>
 
        
@@ -42,8 +52,6 @@
         <div class="container">
         <?php 
         	require("./includes/nav.php");
-            require("./includes/config.php");
-            // require("./models/api.php");
             $all_books = $book -> get_all();
             $all_authors = $book -> get_authors();
             ?>
@@ -55,7 +63,6 @@
             <div class="BookDit">Book Details</div>
          
             <?php
-        $conn = new mysqli("localhost", "root", "", "nvlst", 8889);
 
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -91,15 +98,18 @@
          </div>
 
          <div class="buttons">
-         <!-- <?php if($_GET['w']==1) {?> -->
-         <button class="AddCart">Add to wishlist</button>
-         <!-- <?php }
-                else { ?>
-                   <button class="AddCart">Remove from wishlist</button>
-                    <?php
-                } ?> -->
+        
+         <?php  
+         
+         if($wishStatus == 'add') {  ?>
+         <a type="submit" <?php echo "href='wishListOP.php?id=".$row['ID']."&op=add' "?> class="AddCart">ADD TO WISHLIST</a>
+         <?php }
+         else{ ?>
+         <a type="submit" <?php echo "href='wishListOP.php?id=".$row['ID']."&op=del' "?> class="AddCart">DELETE FROM WISHLIST</a>    
+         <?php } ?>
+
                     
-         <a type="submit" <?php echo "href='addToCart.php?id=".$row['ID']."' "?> class="RentButton">ADD TO CART</a>
+         <a type="submit" <?php echo "href='cartOP.php?id=".$row['ID']."&op=add'' "?> class="RentButton">ADD TO CART</a>
          </div>
              <div class="pic">
                 <img  src="./public/images/covers/<?php echo $row["ISBN"]; ?>.jpg " style="width: 230px; height: 348px;">
@@ -183,13 +193,14 @@
              
              <div class="similar">
                  <div class="title">Similar Books</div>
-
+                 <span> Based on <?php echo $genre; ?></span>
 
               <ul>
                   <?php
                   
                   
                     $simResult = $conn -> query("SELECT * FROM `Books` WHERE `ID` !='$not' AND`Genre`='$genre'") or die($conn -> error);
+    
                     $i=0;
  				    while($simRow = $simResult -> fetch_assoc())  { 
                         if($i==6){ 

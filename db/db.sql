@@ -1,14 +1,22 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Apr 18, 2020 at 05:52 PM
--- Server version: 5.7.26
--- PHP Version: 7.4.2
+-- Host: localhost
+-- Generation Time: Apr 19, 2020 at 03:42 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `nvlst`
@@ -116,16 +124,6 @@ CREATE TABLE `OrderHistory` (
   `Date` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `OrderHistory`
---
-
-INSERT INTO `OrderHistory` (`OrderID`, `UserID`, `Books`, `Date`) VALUES
-(1, 0, '1,2', 'date(Y/m/d)'),
-(2, 0, '1,2', 'date(Y/m/d)'),
-(3, 6, '1,2', 'date(Y/m/d)'),
-(4, 6, '1,2', 'date(Y/m/d)');
-
 -- --------------------------------------------------------
 
 --
@@ -155,24 +153,14 @@ INSERT INTO `Users` (`ID`, `First_Name`, `Last_Name`, `Username`, `Email`, `Pass
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wishlist`
+-- Table structure for table `Wishlist`
 --
 
-CREATE TABLE `wishlist` (
-  `ID` int(10) NOT NULL,
-  `UserID` int(30) NOT NULL,
-  `Books` varchar(30) NOT NULL
+CREATE TABLE `Wishlist` (
+  `ID` int(5) NOT NULL,
+  `UserID` int(5) NOT NULL,
+  `BookID` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `wishlist`
---
-
-INSERT INTO `wishlist` (`ID`, `UserID`, `Books`) VALUES
-(1, 3, ''),
-(2, 4, ''),
-(3, 5, ''),
-(4, 6, '1,3,12');
 
 --
 -- Indexes for dumped tables
@@ -202,14 +190,13 @@ ALTER TABLE `OrderHistory`
 -- Indexes for table `Users`
 --
 ALTER TABLE `Users`
-  ADD KEY `ID` (`ID`),
-  ADD KEY `Username` (`Username`),
-  ADD KEY `Email` (`Email`);
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `ID_2` (`ID`,`Username`,`Email`);
 
 --
--- Indexes for table `wishlist`
+-- Indexes for table `Wishlist`
 --
-ALTER TABLE `wishlist`
+ALTER TABLE `Wishlist`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -232,7 +219,7 @@ ALTER TABLE `Books`
 -- AUTO_INCREMENT for table `OrderHistory`
 --
 ALTER TABLE `OrderHistory`
-  MODIFY `OrderID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `OrderID` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Users`
@@ -241,10 +228,10 @@ ALTER TABLE `Users`
   MODIFY `ID` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `wishlist`
+-- AUTO_INCREMENT for table `Wishlist`
 --
-ALTER TABLE `wishlist`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `Wishlist`
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -255,3 +242,8 @@ ALTER TABLE `wishlist`
 --
 ALTER TABLE `Admins`
   ADD CONSTRAINT `admins_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `Users` (`ID`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
