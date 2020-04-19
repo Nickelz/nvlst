@@ -2,7 +2,6 @@
 require("./includes/config.php");
 
 if ($user -> is_logged_in()) {
-	echo "Already logged in";
 	header('Location: discover.php');
 	exit;
 }
@@ -12,7 +11,6 @@ $arr = array("First_Name", "Last_Name", "Username", "Email", "Password");
 if(isset($_POST["Username"])) {
 	foreach($arr as $field) {
 		$arr[$field] = $conn -> real_escape_string(stripslashes($_POST[$field]));
-		echo $arr[$field] . "<br>";
 	}
 
 	$hashed_password = password_hash($arr['Password'], PASSWORD_BCRYPT);
@@ -26,19 +24,13 @@ if(isset($_POST["Username"])) {
 		\"{$arr['Username']}\",
 		\"{$arr['Email']}\",
 		\"{$hashed_password}\"
-	);";
-
-	echo $query . "<br>";
+    );";
 
 	if ($conn -> query($query) === TRUE) {
         $user -> login($arr['Email'], $arr['Password']);
 		header('Location: discover.php?action=registered');
 		exit;
-	} else {
-		echo "Failed to create user: " . $conn -> error;
 	}
-} else {
-	echo "\$_POST[Username] is not set<br>";
 }
 ?>
 
