@@ -17,7 +17,6 @@ $recentlist=$_COOKIE['recent']; }
 	<link rel="stylesheet" href="./public/styles/main.css" type="text/css">
 	<link rel="stylesheet" href="./public/styles/nav.css" type="text/css">
 	<link rel="stylesheet" href="./public/styles/discover.css" type="text/css">
-	<link rel="shortcut icon" href="./public/images/favicon.png" type="image/x-icon">
 </head>
 
 <body>

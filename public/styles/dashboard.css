@@ -214,7 +214,7 @@ center {
 
 	color: var(--bg-color);
 	background-color: var(--panel-bg-color);
-	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 
 	border: 1px solid var(--gold-color);
 	border-radius: 10px;
