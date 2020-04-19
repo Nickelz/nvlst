@@ -31,14 +31,22 @@
         <?php 
 
 
-$arr = array("First_Name", "Last_Name", "Username", "Email");
 
-$first=$_POST['First_Name'];
-$last=$_POST['Last_Name'];
-$username=$_POST['Username'];
-$email=$_POST['Email'];
+if (isset($_POST['First_Name'])) {
+    $first = $_POST['First_Name'];
+}
 
-$qu = "UPDATE  `Users`
+if (isset($_POST['Last_Name'])) {
+    $last = $_POST['Last_Name'];
+}
+
+if (isset($_POST['Username'])) {
+    $username = $_POST['Username'];
+}
+if (isset($_POST['Email'])) {
+    $email = $_POST['Email'];
+
+    $qu = "UPDATE  `Users`
 	
 	  SET 	First_Name ='$first' , Last_Name ='$last' , Username ='$username' , Email='$email'
 	
@@ -49,6 +57,9 @@ if ($conn->query($qu) === TRUE) {
 } else {
     
 }
+}
+
+
 
 ?>
 
