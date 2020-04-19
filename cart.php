@@ -50,7 +50,7 @@
 					<ul id="book">
 
 						
-						<?php echo "<a href=cartOP.php?id=" . $cartRow['ID'] ."&op=add>" ?>
+						<?php echo "<a href=cartOP.php?id=" . $cartRow['ID'] ."&op=del>" ?>
 						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
 						</a>
 
