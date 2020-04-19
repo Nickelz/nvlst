@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+	
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>The Novelist</title>
@@ -49,7 +50,7 @@
 					<ul id="book">
 
 						
-						<?php echo "<a href=deleteFromCart.php?id=" . $cartRow['ID'] . ">" ?>
+						<?php echo "<a href=cartOP.php?id=" . $cartRow['ID'] ."&op=add>" ?>
 						<li><input type="image" src="./public/images/icons8-delete_bin.svg" alt="DELETE"></li>
 						</a>
 
@@ -138,7 +139,7 @@
 				</ul>
 				<ul>
 				<?php if(isset($whereIn)){ ?>
-				<li><a <?php echo "href=./checkout.php?order=$whereIn " ?> class="button"> Place Order</a>
+				<li><a <?php echo "href=./cartOP.php?op=checkout&order=$whereIn " ?> class="button"> Place Order</a>
 				<?php } ?>
 				</ul>
 			</div>

@@ -21,6 +21,9 @@
 	require("./includes/config.php");
 	require("./models/api.php");
 
+	if(!isset($_SESSION['UserID']))
+	header("location: login.php");
+
 	?>
 
 			<div class="all-containers">
@@ -31,7 +34,7 @@
 
                     <label> List</label>
 
-                    <a href="#" >Clear </a>
+                    <a href="wishlistOP.php?op=clear" >Clear </a>
                 </div>
 
                 <div class="wish-list-container"> 
@@ -83,14 +86,16 @@
 
 						<?php
 						//retrive the list from wishlist tabel
-						$wishlist = $conn -> query("SELECT * FROM `wishlist` WHERE `UserID` = 6") or die($conn -> error);
+						$list = array();
+						$wishlist = $conn -> query("SELECT * FROM `Wishlist` WHERE `UserID` = {$_SESSION['UserID']}") or die($conn -> error);
 						while($listRow = $wishlist -> fetch_assoc())  {
-							$list = $listRow["Books"];
-							
+							array_push($list , $listRow["BookID"]);
+							$listwish = implode(',' , $list);
 						}
 						// retrive the books
-						$wishResult = $conn -> query("SELECT * FROM `Books` WHERE `ID` IN ($list)") or die($conn -> error);
-			
+						if(isset($listwish)){
+						$wishResult = $conn -> query("SELECT * FROM `Books` WHERE `ID` IN ($listwish)") or die($conn -> error);
+						
 						while($wishRow = $wishResult -> fetch_assoc())  { ?>
 				
 						<ul id="book">
@@ -103,7 +108,7 @@
 							<li id="bookAuthor"><?php echo $wishRow["Author_Name"]; ?></li>
 							<li id="bookPrice"><?php echo $wishRow["Price"]; ?> SR</li>
 						</ul>
-						<?php } ?>
+						<?php } }?>
 					</div>
 
 					<!-- <div class="botton-row">

@@ -27,7 +27,7 @@
 		
 <div class="order">
 <?php
-$conn = new mysqli("localhost", "root", "", "nvlst", 3306);
+// $conn = new mysqli("localhost", "root", "", "nvlst", 3306);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -47,7 +47,7 @@ if ($conn->connect_error) {
 ?>
 
  <div class="orderInfo">
-    <div class="top"><h4> ID :NSAC100247617 - <?php echo $ro["OrderID"]; ?></h4><h4 class="right"><?php echo $ro["Date"]; ?></h4></div>
+    <div class="top"><h4> NSAC10024761700<?php echo $ro["OrderID"]; ?></h4><h4 class="right"><?php echo $ro["Date"]; ?></h4></div>
     <hr>
     
     
