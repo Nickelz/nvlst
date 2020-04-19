@@ -8,10 +8,6 @@ foreach($possible_query_items as $item) {
 		$searched_books = $book -> search($_GET[$item]);
 	}
 }
-
-foreach($searched_books as $book) {
-	echo $book["Title"];
-}
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +30,7 @@ foreach($searched_books as $book) {
 				<input type="search" name="s" placeholder="Search for books, providers or authors .." autocomplete="off">
 				<a href="#">Reset</a>
 				<a href="javascript:{}" onclick="document.getElementById('form').submit()">Search</a>
+				<input type="submit" style="display: none;" />
 			</div>
 
 			<div class="cards">
