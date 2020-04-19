@@ -41,6 +41,12 @@
 					<span>Orders</span>
 				</a>
 			</li>
+			<li id="<?php echo ($activePage == 'contact') ? 'active' : '' ?>">
+				<a href="./contact.php">
+					<img src="./public/images/icons8-books.svg" alt="My books" width="20px">
+					<span>Contact Us</span>
+				</a>
+			</li>
 		</ul>
 		<?php
 		require_once("./includes/config.php");
