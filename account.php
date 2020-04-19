@@ -42,7 +42,7 @@ $qu = "UPDATE  `Users`
 	
 	  SET 	First_Name ='$first' , Last_Name ='$last' , Username ='$username' , Email='$email'
 	
-    WHERE `ID`= 8";
+    WHERE `ID`=" .$_SESSION['UserID'];
 
 if ($conn->query($qu) === TRUE) {
     
