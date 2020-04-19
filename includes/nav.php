@@ -43,7 +43,7 @@
 			</li>
 			<li id="<?php echo ($activePage == 'contact') ? 'active' : '' ?>">
 				<a href="./contact.php">
-					<img src="./public/images/icons8-books.svg" alt="My books" width="20px">
+					<img src="./public/images/icons8-contacts.svg" alt="My books" width="20px">
 					<span>Contact Us</span>
 				</a>
 			</li>

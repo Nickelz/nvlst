@@ -96,7 +96,7 @@ if(isset($_POST["Username"])) {
             <a class="log" href="./login.php">LOG IN</a>
             <div class="back-To-Browsing">
                 <img src="./public/images/icons8-long_arrow_left.svg" alt="arrow" width="21px">
-                <a href="#">Back to browsing</a>
+                <a href="discover.php">Back to browsing</a>
             </div>
         </div>
     </div>

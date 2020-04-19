@@ -3,6 +3,11 @@
 	gap: 1rem;
 }
 
+.myCart {
+	display: flex;
+	flex-flow: column wrap;
+}
+
 .myCart, .checkout {
 	background: var(--panel-bg-color);
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
@@ -158,10 +163,6 @@ h1 {
 }
 .button{
 	padding: 7px 33px;
-	/*
-	grid-row: 6;
-			grid-column: 2;
-	*/
 	margin-right: 1em;
 	
 	background: #F5D8B9;
@@ -180,6 +181,25 @@ h1 {
 	color: #000000;
 	
 }
-.but{
-	margin-left: 1rem;
+
+#checkoutContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+#placeOrder {
+	width: 60%;
+	padding-top: 1.5%;
+	padding-bottom: 1.5%;
+	margin-top: 7%;
+	font-size: calc(0.25rem + 0.4vw);
+	font-weight: 700;
+
+	text-transform: uppercase;
+	text-align: center;
+
+	color: var(--panel-bg-color);
+	background-color: var(--gold-color);
+	border-radius: 8px;
 }
