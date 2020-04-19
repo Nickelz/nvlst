@@ -79,7 +79,10 @@
 
 				<div><img src="./public/images/empty.png" width=550 height=400></div>
 				<?php  }  ?>
+
 		</div>
+		<div class="but"><a herf="" class="button"> Delete All</a></div>
+
 		<div class="checkout">
 			<h1>Checkout</h1>
 			<div class="infoSection">
