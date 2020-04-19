@@ -34,10 +34,17 @@ class Book {
 	}
 
 	public function get_authors() {
-		$authors = array();
 		$result = $this -> _db -> query("SELECT DISTINCT `Author_Name` FROM `Books`;");
 		if ($result -> num_rows > 0) {
-			while($author = $result -> fetch_assoc()) array_push($authors, $author["Author_Name"]);
+			while($author = $result -> fetch_assoc()) $authors[] = $author["Author_Name"];
+			return $authors;
+		}
+	}
+
+	public function get_random_authors($num=5) {
+		$result = $this -> _db -> query("SELECT DISTINCT `Author_Name` FROM `Books` ORDER BY RAND() LIMIT {$num}");
+		if($result -> num_rows > 0) {
+			while($author = $result -> fetch_assoc()) $authors[] = $author["Author_Name"];
 			return $authors;
 		}
 	}

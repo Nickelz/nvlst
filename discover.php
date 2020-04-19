@@ -1,7 +1,7 @@
 <?php
 require("./includes/config.php");
 $all_books = $book -> get_all();
-$all_authors = $book -> get_authors();
+$all_authors = $book -> get_random_authors(8);
 if(isset($_COOKIE['recent'])){
 $recentlist=$_COOKIE['recent']; }
 ?>
@@ -35,22 +35,12 @@ $recentlist=$_COOKIE['recent']; }
 			
 							while($recentRow = $recentResult -> fetch_assoc())  { ?>
 							<div class="book">
-
 						
-							<div class="cover"></div>
-							<?php echo "<a href=proudctView.php?id=" . $recentRow['ID'] . ">" ?>
-							<img src="./public/images/covers/<?php echo $recentRow["ISBN"]; ?>.jpg" style="width: 50px; height: 70px; left:5px;" alt="Book">
+							<a class="cover"<?php echo "<a href=proudctView.php?id=" . $recentRow['ID'];?> style="background-image: url('./public/images/covers/<?php echo $recentRow['ISBN']; ?>.jpg')"></a>
 							</a>
 							<div class="info">
 							<span><?php echo $recentRow['Title'];?></span>
-							<span>by Liz Moore</span>
-							<div class="rating">
-								<?php for ($i=0;$i<$recentRow["rating"];$i++) { ?>	
-								<img src="./public/images/icons8-star.svg" alt="Star" width="6%">
-								<?php } ?>
-								>
-							</div>
-							<span>because you rented <strong>eleanor & park</strong> by <strong>Rainbow Rowell</strong></span>
+							<span>by <?php echo $recentRow['Author_Name'];?></span>
 						</div>
 					
 					</div>
@@ -66,7 +56,7 @@ $recentlist=$_COOKIE['recent']; }
 					<?php
 					$j=0;
 					foreach($all_books as $book_row):
-						if($j==5){ // number of books in discover
+						if($j==15){ // number of books in discover
 							break;}
 						else
 							$j++	
@@ -88,12 +78,11 @@ $recentlist=$_COOKIE['recent']; }
 			<div class="authors">
 				<h3>Authors</h3>
 				<div class="authorsContainer">
+					<ul>
 					<?php foreach($all_authors as $author): ?>
-					<div class="author">
-						<img src="<?php echo GOODREADS::get_author_image($author) ?>" alt="Author">
-						<span><?php echo $author; ?></span>
-					</div>
-					<?php endforeach; ?>
+						<li><a href="<?php echo "searchResult.php?s=" . urlencode($author); ?>"><?php echo $author; ?></a></li>
+						<?php endforeach; ?>
+					</ul>
 				</div>
 			</div>
 		</div>

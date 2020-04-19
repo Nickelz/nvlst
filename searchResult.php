@@ -4,6 +4,11 @@ $found_queries = array();
 $possible_queries = array("s" => "Title", "pages" => "Pages", "isbn" => "ISBN", "date" => "Release_Date", "genre" => "Genre", "lang" => "Language", "rating" => "Rating");
 
 foreach($possible_queries as $key => $value) {
+	if($key == 's') {
+		$books = $book -> search($_GET[$key]);
+		$found_queries[$key] = $_GET[$key];
+		continue;
+	}
 	if (isset($_GET[$key]) && !empty($_GET[$key])) {
 		$books = $book -> find($value, $_GET[$key]);
 		$found_queries[$key] = $_GET[$key];
@@ -29,7 +34,7 @@ foreach($possible_queries as $key => $value) {
 		<div>
 			<div class="content">
 				<div class="controls">
-					<a href="search.php"><img src="./public/images/icons8-long_arrow_left.svg" alt="back"> Go back to search</a>
+					<a onclick="history.go(-1);"><img src="./public/images/icons8-long_arrow_left.svg" alt="back"> Go back to search</a>
 					<ul>
 					<?php foreach ($found_queries as $key => $value): ?>
 							<li><?php echo $value; ?></li>
@@ -46,7 +51,7 @@ foreach($possible_queries as $key => $value) {
 					</div>
 				<?php else: ?>
 				<?php foreach($books as $book): ?>
-				<div class="book">
+				<a class="book" href="#">
 					<img src="./public/images/covers/<?php echo $book["ISBN"]; ?>.jpg" alt="Cover">
 					<div class="info">
 						<div class="top">
@@ -57,14 +62,14 @@ foreach($possible_queries as $key => $value) {
 							<span><?php echo $book["Release_Date"]; ?></span>
 							<span><?php echo $book["Price"]; ?> SR</span>
 							<span><?php echo $book["Provider"]; ?></span>
-							<span><?php echo $book["Rating"]; ?></span>
+							<span><?php echo $book["rating"]; ?>.0 / 5</span>
 							<span><?php echo $book["Pages"]; ?> pages</span>
 						</div>
 						<div class="bottom">
 							<p><?php echo $book["des"]; ?></p>
 						</div>
 					</div>
-				</div>
+				</a>
 				<hr>
 				<?php endforeach; ?>
 			</div>

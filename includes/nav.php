@@ -3,13 +3,13 @@
 	<div class="sideNav">
 		<img src="./public/images/Logo.svg" alt="Logo" class="logo">
 		<ul>
-			<li id="<?php echo ($activePage == 'search' || $activePage == 'searchResult') ? 'active' : '' ?>">
+			<li id="<?php echo ($activePage == 'search' || $activePage == 'searchResult' || $_SESSION['previous_location'] == 'searchResult' || $_SESSION['previous_location'] == 'search') ? 'active' : '' ?>">
 				<a href="./search.php">
 					<img src="./public/images/icons8-search.svg" alt="Search" width="20px">
 					<span>Search</span>
 				</a>
 			</li>
-			<li id="<?php echo ($activePage == 'discover') ? 'active' : '' ?>">
+			<li id="<?php echo ($activePage == 'discover' || $_SESSION['previous_location'] == 'discover') ? 'active' : '' ?>">
 				<a href="./discover.php">
 					<img src="./public/images/icons8-compass.svg" alt="Discover" width="20px">
 					<span>Discover</span>
@@ -19,12 +19,6 @@
 				<a href="./mybooks.php">
 					<img src="./public/images/icons8-books.svg" alt="My books" width="20px">
 					<span>My Books</span>
-				</a>
-			</li>
-			<li id="<?php echo ($activePage == 'myreviews') ? 'active' : '' ?>">
-				<a href="./myreviews.html">
-					<img src="./public/images/icons8-survey.svg" alt="My reviews" width="20px">
-					<span>My Reviews</span>
 				</a>
 			</li>
 		</ul>
@@ -57,7 +51,7 @@
 			<div>
 				<hr align="left">
 			</div>
-			<a href="">Edit Profile</a>
+			<a href="./account.php">Edit Profile</a>
 			<a href="./logout.php">Logout</a>
 		</div>
 		<?php else: ?>
