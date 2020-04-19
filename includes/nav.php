@@ -3,7 +3,7 @@
 	<div class="sideNav">
 		<img src="./public/images/Logo.svg" alt="Logo" class="logo">
 		<ul>
-			<li id="<?php echo ($activePage == 'search') ? 'active' : '' ?>">
+			<li id="<?php echo ($activePage == 'search' || $activePage == 'searchResult') ? 'active' : '' ?>">
 				<a href="./search.php">
 					<img src="./public/images/icons8-search.svg" alt="Search" width="20px">
 					<span>Search</span>
@@ -16,7 +16,7 @@
 				</a>
 			</li>
 			<li id="<?php echo ($activePage == 'mybooks') ? 'active' : '' ?>">
-				<a href="./mybooks.html">
+				<a href="./mybooks.php">
 					<img src="./public/images/icons8-books.svg" alt="My books" width="20px">
 					<span>My Books</span>
 				</a>
@@ -42,7 +42,7 @@
 				</a>
 			</li>
 			<li id="<?php echo ($activePage == 'orders') ? 'active' : '' ?>">
-				<a href="./orders.html">
+				<a href="./orders.php">
 					<img src="./public/images/icons8-purchase_order.svg" alt="Orders" width="20px">
 					<span>Orders</span>
 				</a>
@@ -65,10 +65,12 @@
 		<?php endif; ?>
 	</div>
 
-	<?php if($user -> is_admin($_SESSION['UserID']) === TRUE): ?>
+	<?php 	
+			if(isset($_SESSION['UserID'])){
+			if($user -> is_admin($_SESSION['UserID']) === TRUE): ?>
 		<a id="dashboard" href="dashboard.php">
 			<img src="./public/images/icons8-dashboard.png" alt="Dashboard">
 			<span>Admin Dashboard</span>
 		</a>
-	<?php endif; ?>
+	<?php endif;} ?>
 </div>

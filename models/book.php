@@ -16,9 +16,11 @@ class Book {
 	}
 
 	public function find($column, $value) {
-		$result = $this -> _db -> query("SELECT * FROM `Books` WHERE `{$column}`='{$value}';");
-		$row = $result -> fetch_assoc();
-		return $this -> fetchedRow($row);
+		$result = $this -> _db -> query("SELECT * FROM `Books` WHERE `{$column}` LIKE '%{$value}%';");
+		if ($result -> num_rows > 0)
+			while ($book = $result -> fetch_assoc())
+				$books[] = $book;
+		return $books;
 	}
 
 	public function get_all() {
