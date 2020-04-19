@@ -109,7 +109,7 @@
          <?php } ?>
 
                     
-         <a type="submit" <?php echo "href='addToCart.php?id=".$row['ID']."' "?> class="RentButton">ADD TO CART</a>
+         <a type="submit" <?php echo "href='cartOP.php?id=".$row['ID']."&op=add'' "?> class="RentButton">ADD TO CART</a>
          </div>
              <div class="pic">
                 <img  src="./public/images/covers/<?php echo $row["ISBN"]; ?>.jpg " style="width: 230px; height: 348px;">
