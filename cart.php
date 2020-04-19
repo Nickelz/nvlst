@@ -81,7 +81,7 @@
 				<?php  }  ?>
 
 		</div>
-		<div class="but"><a herf="" class="button"> Delete All</a></div>
+		<div class="but"><a href="cartOP.php?op=clear" class="button"> Delete All</a></div>
 
 		<div class="checkout">
 			<h1>Checkout</h1>
