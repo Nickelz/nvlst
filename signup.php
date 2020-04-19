@@ -28,10 +28,14 @@ if(isset($_POST["Username"])) {
 		\"{$hashed_password}\"
 	);";
 
+    
 	echo $query . "<br>";
 
 	if ($conn -> query($query) === TRUE) {
         $user -> login($arr['Email'], $arr['Password']);
+
+    
+        mysqli_query($conn,"INSERT INTO `wishlist` (`UserID`) VALUES ('$_SESSION[UserID]');");
 		header('Location: discover.php?action=registered');
 		exit;
 	} else {
