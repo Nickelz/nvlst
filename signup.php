@@ -43,7 +43,7 @@ if(isset($_POST["Username"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./public/styles/main.css">
     <link rel="stylesheet" href="./public/styles/signUp.css">
-    <title>Sign Up</title>
+    <script src="./public/scripts/form-validation.js"></script>
 </head>
 
 <body>
@@ -53,7 +53,7 @@ if(isset($_POST["Username"])) {
 
             <h2>Sign up</h2>
 
-            <form action="" method="POST">
+            <form action="signup.php" onsubmit="return validate(this)" method="POST">
                 <hr>
                 <div class="father">
                     <div class="chiled-left">
