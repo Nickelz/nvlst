@@ -124,3 +124,30 @@ border-radius: 5px;
 .account form select:focus {
 	border-color: var(--gold-color);
 }
+.button{
+	padding: 7px 33px;
+	/*
+	grid-row: 6;
+			grid-column: 2;
+	*/
+	
+	background: #F5D8B9;
+	border-radius: 8px;
+	
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 14px;
+	line-height: 21px;
+	/* identical to box height */
+	
+	align-items: center;
+	text-align: center;
+	
+	color: #000000;
+	
+}
+
+.but{
+	margin-left: 1.5rem;
+}
