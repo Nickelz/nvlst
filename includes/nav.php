@@ -3,7 +3,7 @@
 	<div class="sideNav">
 		<img src="./public/images/Logo.svg" alt="Logo" class="logo">
 		<ul>
-			<li id="<?php echo ($activePage == 'search') ? 'active' : '' ?>">
+			<li id="<?php echo ($activePage == 'search' || $activePage == 'searchResult') ? 'active' : '' ?>">
 				<a href="./search.php">
 					<img src="./public/images/icons8-search.svg" alt="Search" width="20px">
 					<span>Search</span>
