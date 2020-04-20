@@ -24,17 +24,4 @@
     {
         $_SESSION['Cart'] = array();
         header("location: cart.php");
-    }   
-
-    if($_GET['op']== 'checkout')
-    {
-        $date= date("Y/m/d l H:i");
-        echo $date;
-        if(mysqli_query($conn,"insert into OrderHistory values('','$_SESSION[UserID]','$_GET[order]','$date')"))
-        $_SESSION['Cart'] = array();
-         
-        header('location:cart.php');   
     }
-
-
-?>

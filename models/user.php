@@ -6,6 +6,7 @@ class User {
 		$this -> _db = $db;
 	}
 
+	// Logs the user in and declares the needed session values
 	public function login($email, $password) {
 		$row = $this -> get_hash($email);
 
@@ -20,15 +21,16 @@ class User {
 		return false;
 	}
 
+	// User signup
 	public function signUp($firstName, $lastName, $username, $email, $password) {
 		$fields = array("First_Name", "Last_Name", "Username", "Email", "Password");
 		$i=0;
 		foreach($fields as $field) {
-			$fields[$field] = $this -> _db -> real_escape_string(stripslashes(func_get_args()[$i]));
+			$fields[$field] = $this -> _db -> real_escape_string(stripslashes(func_get_args()[$i]));	// Turns all user values to a URL-friendly values
 			$i++;
 		}
 
-		$hashed_password = password_hash($fields['Password'], PASSWORD_BCRYPT);
+		$hashed_password = password_hash($fields['Password'], PASSWORD_BCRYPT);	// Hashes the password
 		
 		$query = "INSERT INTO `Users` (`First_Name`, `Last_Name`, `Username`, `Email`, `Password`)
 		VALUES (
