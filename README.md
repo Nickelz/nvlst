@@ -1,6 +1,7 @@
 # The Novelist
 Web-based Systems course project.
-***
+
+
  - **Database Information**
 ```Host: localhost
 Username: root
