@@ -154,11 +154,11 @@ CREATE TABLE `Users` (
 --
 
 INSERT INTO `Users` (`ID`, `First_Name`, `Last_Name`, `Username`, `Email`, `Password`) VALUES
-(3, 'Mohammed', 'Abdullah', 'MK', 'mk@gmail.com', '$2y$10$rfMworodJN1Nst/n/Bk.K.KMfYqZsiV2GyPpzxGPaXt.mJ5ciDJQ6'),
+(3, 'Ali', 'Hussain', 'AH', 'admin@nvlst.store', '$2y$10$rfMworodJN1Nst/n/Bk.K.KMfYqZsiV2GyPpzxGPaXt.mJ5ciDJQ6'),
 (4, 'Ali', 'Hussain', 'Nickelz', 'xinickelz@gmail.com', '$2y$10$mmi7637H.0Pz9ToSNYzKieDDwdbhoWBmHuEAKpak2Gbwz9DyT/u1u'),
-(6, '', '', '', '', '$2y$10$J8dNhEjrnKca9GoSssKece9Vs795gercdxxFwDJPnWE4dxqLjUCnC'),
 (7, 'Mohammed', 'Hassan', 'Splash', 'splsh@gmail.com', '$2y$10$fA2LRJ1EI6w1F2277tDO8ODbYlZuHtiMrk77I2hwwb/7cr2v9ufMm'),
-(14, 'MK', 'ALHAJRI', 'MK97', 'MK@ALHAJRI.COM', '$2y$10$Q181eeg9.pRzanNCRDKrvefhhp8wY/t7OvGWbkwCUwOxuzss8GS/e');
+(8, 'Abdulaziz', 'Ibrahim', 'azo', 'aziz@nvlst.store', '$2y$10$GAp51gqXLgLVVgGrUDUF4OTpZfvP.ddxdp3KMCQLu2rRpAVhO7iTO')
+(14, 'Aziz', 'Ibrahim', 'azo', 'aziz@q8.COM', '$2y$10$Q181eeg9.pRzanNCRDKrvefhhp8wY/t7OvGWbkwCUwOxuzss8GS/e');
 
 -- --------------------------------------------------------
 
