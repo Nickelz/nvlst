@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 19, 2020 at 09:37 PM
+-- Generation Time: Apr 20, 2020 at 03:40 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -125,6 +125,15 @@ CREATE TABLE `OrderHistory` (
   `Date` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `OrderHistory`
+--
+
+INSERT INTO `OrderHistory` (`OrderID`, `UserID`, `Books`, `Date`) VALUES
+(1, 14, '1,2,3', '2020/04/20 Monday 03:00'),
+(2, 14, '1,3', '2020/04/20 Monday 03:07'),
+(3, 14, '17', '2020/04/20 Monday 03:11');
+
 -- --------------------------------------------------------
 
 --
@@ -147,8 +156,9 @@ CREATE TABLE `Users` (
 INSERT INTO `Users` (`ID`, `First_Name`, `Last_Name`, `Username`, `Email`, `Password`) VALUES
 (3, 'Mohammed', 'Abdullah', 'MK', 'mk@gmail.com', '$2y$10$rfMworodJN1Nst/n/Bk.K.KMfYqZsiV2GyPpzxGPaXt.mJ5ciDJQ6'),
 (4, 'Ali', 'Hussain', 'Nickelz', 'xinickelz@gmail.com', '$2y$10$mmi7637H.0Pz9ToSNYzKieDDwdbhoWBmHuEAKpak2Gbwz9DyT/u1u'),
-(6, 'Ali', 'Ahmed', 'Azoz', 'mk@al.com', '$2y$10$J8dNhEjrnKca9GoSssKece9Vs795gercdxxFwDJPnWE4dxqLjUCnC'),
-(7, 'Mohammed', 'Hassan', 'Splash', 'splsh@gmail.com', '$2y$10$fA2LRJ1EI6w1F2277tDO8ODbYlZuHtiMrk77I2hwwb/7cr2v9ufMm');
+(6, '', '', '', '', '$2y$10$J8dNhEjrnKca9GoSssKece9Vs795gercdxxFwDJPnWE4dxqLjUCnC'),
+(7, 'Mohammed', 'Hassan', 'Splash', 'splsh@gmail.com', '$2y$10$fA2LRJ1EI6w1F2277tDO8ODbYlZuHtiMrk77I2hwwb/7cr2v9ufMm'),
+(14, 'MK', 'ALHAJRI', 'MK97', 'MK@ALHAJRI.COM', '$2y$10$Q181eeg9.pRzanNCRDKrvefhhp8wY/t7OvGWbkwCUwOxuzss8GS/e');
 
 -- --------------------------------------------------------
 
@@ -229,19 +239,19 @@ ALTER TABLE `Books`
 -- AUTO_INCREMENT for table `OrderHistory`
 --
 ALTER TABLE `OrderHistory`
-  MODIFY `OrderID` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `OrderID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `Users`
 --
 ALTER TABLE `Users`
-  MODIFY `ID` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `ID` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `Wishlist`
 --
 ALTER TABLE `Wishlist`
-  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
