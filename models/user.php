@@ -20,6 +20,31 @@ class User {
 		return false;
 	}
 
+	public function signUp($firstName, $lastName, $username, $email, $password) {
+		$fields = array("First_Name", "Last_Name", "Username", "Email", "Password");
+		$i=0;
+		foreach($fields as $field) {
+			$fields[$field] = $this -> _db -> real_escape_string(stripslashes(func_get_args()[$i]));
+			$i++;
+		}
+
+		$hashed_password = password_hash($fields['Password'], PASSWORD_BCRYPT);
+		
+		$query = "INSERT INTO `Users` (`First_Name`, `Last_Name`, `Username`, `Email`, `Password`)
+		VALUES (
+			\"{$fields['First_Name']}\",
+			\"{$fields['Last_Name']}\",
+			\"{$fields['Username']}\",
+			\"{$fields['Email']}\",
+			\"{$hashed_password}\"
+		);";
+
+		if ($this -> _db -> query($query) === TRUE) {
+			$this -> login($fields['Email'], $fields['Password']);
+			$this -> _db -> query("INSERT INTO `wishlist` (`UserID`) VALUES ('$_SESSION[UserID]');");
+		}
+	}
+
 	public function search($keyword) {
 		$sql = "SELECT * FROM `Users` WHERE `ID`=\"{$keyword}\" OR `First_Name` LIKE \"%{$keyword}%\" OR `Last_Name` LIKE \"%{$keyword}%\" OR `Username` LIKE \"%{$keyword}%\" OR `Email` LIKE \"%{$keyword}%\"";
 		$result = $this -> _db -> query($sql);

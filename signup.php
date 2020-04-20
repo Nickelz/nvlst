@@ -6,32 +6,10 @@ if ($user -> is_logged_in()) {
 	exit;
 }
 
-$arr = array("First_Name", "Last_Name", "Username", "Email", "Password");
-
 if(isset($_POST["Username"])) {
-	foreach($arr as $field) {
-		$arr[$field] = $conn -> real_escape_string(stripslashes($_POST[$field]));
-	}
-
-	$hashed_password = password_hash($arr['Password'], PASSWORD_BCRYPT);
-    $activasion = md5(uniqid(rand(), true));
-    
-    
-	$query = "INSERT INTO `Users` (`First_Name`, `Last_Name`, `Username`, `Email`, `Password`)
-	VALUES (
-		\"{$arr['First_Name']}\",
-		\"{$arr['Last_Name']}\",
-		\"{$arr['Username']}\",
-		\"{$arr['Email']}\",
-		\"{$hashed_password}\"
-    );";
-
-	if ($conn -> query($query) === TRUE) {
-        $user -> login($arr['Email'], $arr['Password']);
-        mysqli_query($conn,"INSERT INTO `wishlist` (`UserID`) VALUES ('$_SESSION[UserID]');");
-		header('Location: discover.php?action=registered');
-		exit;
-	}
+    $user -> signUp($_POST["First_Name"], $_POST["Last_Name"], $_POST["Username"], $_POST["Email"], $_POST["Password"]);
+    header('Location: discover.php?action=registered');
+    exit;
 }
 ?>
 
