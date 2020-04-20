@@ -181,6 +181,11 @@ h1 {
 	color: #000000;
 	
 }
+.but{
+	margin-left: 1rem;
+	margin-bottom: 1rem;
+	
+}
 
 #checkoutContainer {
 	display: flex;

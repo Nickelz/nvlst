@@ -48,13 +48,18 @@
 									<li id="bookPrice"><?php echo $cartRow["Price"] ?> SR </li>
 								</ul>
 							</div>
+							
 						<?php
 						}
 					} else { //echo "Cart Empty";
 						?>
 						<div><img src="./public/images/empty.png" width=550 height=400></div>
 					<?php  }  ?>
+
 				</div>
+				<div class="but"><a href="cartOP.php?op=clear" class="button"> Delete All</a></div>
+
+
 			</div>
 		</div>
 		<div id="checkoutContainer">
