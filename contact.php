@@ -27,6 +27,11 @@
 				<div class="big">
 					<div class="one-word">
 					<label> Contact Us </label>
+					<div><span style="font-size: 20px;">Email : nvlst@info.com</span></div>
+					<div><span style="font-size: 20px;">phone : 0503454XXX</span></div>
+					<div><span style="font-size: 20px;">Location : </span></div>
+
+
 				</div>
 
 
