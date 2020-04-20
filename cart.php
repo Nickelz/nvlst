@@ -117,7 +117,7 @@
 				</div>
 			</div>
 			<?php if (isset($whereIn)): ?>
-				<a href="#" id="placeOrder">Place your order</a>
+				<a href="./cartOP.php?op=checkout&order=<?php echo $whereIn; ?>" id="placeOrder">Place your order</a>
 			<?php endif; ?>
 		</div>
 </body>

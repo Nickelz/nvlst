@@ -49,6 +49,16 @@ class Book {
 		}
 	}
 
+	public function get_random_books($num=15) {
+		$result = $this -> _db -> query("SELECT * FROM `Books` ORDER BY RAND() LIMIT {$num};");
+		if ($result -> num_rows > 0) {
+			while($book = $result -> fetch_assoc()) {
+				$books[] = $book;
+			}
+			return $books;
+		}
+	}
+
 	public function add($title, $author, $provider, $genre, $language, $released, $isbn, $no_of_pages, $price) {
 		$sql = "INSERT INTO `Books`
 		(`Title`, `Author_Name`, `Provider`, `Genre`, `Language`, `Release_Date`, `ISBN`, `Number_of_Pages`, `Price`)

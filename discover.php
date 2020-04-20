@@ -1,7 +1,7 @@
 <?php
 require("./includes/config.php");
-$all_books = $book->get_all();
-$all_authors = $book->get_random_authors(8);
+$random_books = $book -> get_random_books(15);
+$random_authors = $book -> get_random_authors(8);
 if (isset($_COOKIE['recent'])) {
 	$recentlist = $_COOKIE['recent'];
 }
@@ -30,14 +30,13 @@ if (isset($_COOKIE['recent'])) {
 				<div class="books">
 					<?php
 					if (isset($_COOKIE['recent'])) {
-						$recentResult = $conn->query("SELECT * FROM `Books` WHERE `ID` IN ($recentlist)") or die($conn->error);
-						while ($recentRow = $recentResult->fetch_assoc()) { ?>
-							<div class="book">
+						$recentResult = $conn -> query("SELECT * FROM `Books` WHERE `ID` IN ($recentlist)") or die($conn->error);
+						while ($recentRow = $recentResult -> fetch_assoc()) { ?>
+							<a class="book" href="proudctView.php?id=<?php echo $recentRow['ID']; ?>">
 								<span><?php echo $recentRow['Title']; ?></span>
 								<span><?php echo $recentRow['Author_Name']; ?></span>
-							</div>
-					<?php }
-					} ?>
+							</a>
+					<?php }} ?>
 				</div>
 			</div>
 
@@ -45,14 +44,7 @@ if (isset($_COOKIE['recent'])) {
 				<div class="booksContainer">
 					<h3>Browse</h3>
 					<div class="books">
-						<?php
-						$j = 0;
-						foreach ($all_books as $book_row) :
-							if ($j == 15) { // number of books in discover
-								break;
-							} else
-								$j++
-						?>
+						<?php foreach ($random_books as $book_row): ?>
 							<div class="book">
 								<?php echo "<a href=proudctView.php?id=" . $book_row['ID'] . ">" ?>
 								<img src="./public/images/covers/<?php echo $book_row["ISBN"]; ?>.jpg" alt="Book">
@@ -60,10 +52,7 @@ if (isset($_COOKIE['recent'])) {
 								<span><?php echo $book_row["Title"]; ?></span>
 								<span><?php echo $book_row["Author_Name"]; ?></span>
 							</div>
-						<?php
-	
-						endforeach;
-						?>
+						<?php endforeach; ?>
 	
 					</div>
 				</div>
@@ -71,7 +60,7 @@ if (isset($_COOKIE['recent'])) {
 					<h3>Authors</h3>
 					<div class="authors">
 						<ul>
-							<?php foreach ($all_authors as $author) : ?>
+							<?php foreach ($random_authors as $author) : ?>
 								<a href="<?php echo "searchResult.php?s=" . urlencode($author); ?>"><li><?php echo $author; ?></li></a>
 							<?php endforeach; ?>
 						</ul>
