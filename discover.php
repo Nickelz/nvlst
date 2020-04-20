@@ -25,20 +25,21 @@ if (isset($_COOKIE['recent'])) {
 
 		<div class="discover">
 			<h1>Discover</h1>
-			<div class="foryou">
+			<?php if (isset($_COOKIE['recent'])): ?>
+				<div class="foryou">
 				<h3>Recently Viewed</h3>
 				<div class="books">
-					<?php
-					if (isset($_COOKIE['recent'])) {
+						<?php
 						$recentResult = $conn -> query("SELECT * FROM `Books` WHERE `ID` IN ($recentlist)") or die($conn->error);
-						while ($recentRow = $recentResult -> fetch_assoc()) { ?>
+						while ($recentRow = $recentResult -> fetch_assoc()): ?>
 							<a class="book" href="proudctView.php?id=<?php echo $recentRow['ID']; ?>">
 								<span><?php echo $recentRow['Title']; ?></span>
 								<span><?php echo $recentRow['Author_Name']; ?></span>
 							</a>
-					<?php }} ?>
+						<?php endwhile; ?>
+					</div>
 				</div>
-			</div>
+			<?php endif; ?>
 
 			<div class="browse">
 				<div class="booksContainer">
